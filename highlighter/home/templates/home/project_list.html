@@ -1,28 +1,66 @@
 {% extends "home/layout.html" %}
 
 {% block content %}
+    <div class="container">
+        <div class="jumbotron">
+            <h1>Django Template <sup>by AskDjango</sup></h1>
+            <p>여러분의 파이썬/장고 페이스메이커가 되어드리겠습니다.</p>
+            <p>
+                <a class="btn btn-lg btn-primary" href="http://facebook.com/groups/askdjango">
+                    AskDjango 페이스북 그룹 &raquo;
+                </a>
+            </p>
+        </div>
 
-    <form action="" method="get">
-        <input type="text" name="q" value="{{ q }}"/>
-        <input type="submit" value="검색" />
-    </form>
+        <div class="row">
+            <div class="col-sm-12">
+            <div class ="alert alert-info">
+                <ul>
+                    <li>
+                        http://localhost:8000/blog 주소로 접속해보세요.
+                    </li>
+                    <li>
+                        템플 릿 경로 blog/templates/post_list.html 경로 가아 닌 blog/templates/blog/post_list.html 경로 를쓰 는지 에대 한이유 는후 에 template Loader에 서설명합니다.
+                    </li>
+                </ul>
+            </div>
+                <p>
+                <form action="" method="get">
+                    <input type="text" name="q" value="{{ q }}" />
+                    <input type="submit" value="검색" class = "btn btn-primary"/>
+                </form>
+                </p>
+                <table class="table table-hover table-bordered">
+                    <thead>
+                    <tr>
+                        <th>id</th>
+                        <th>title</th>
+                        <th>author</th>
+                        <th>updated_at</th>
+                    </tr>
 
-    <ul>
-        {% for project in project_list%}
-            <li>
-                {{ project.id }}
+                    </thead>
+                    <tbody>
+                    {% for project in project_list%}
+                        <tr>
+                            <td>{{ project.id }}</td>
 
-                <a href="{% url "home:project_detail" project.id %}">
-                    {{ project.title }}
-                </a></li>
+                            <td>
+                                <a href="{% url "home:project_detail" project.id %}">
+                                    {{ project.title }}
+                                </a>
+                            </td>
 
-{#                <a href="/home/{{ project.id }}">#}
-{#                    {{ project.title }}#}
-{#                </a></li>#}
-            <small>{{ project.author }}</small>
-            <small>{{ project.updated_at }}</small>
-            </li>
-        {% endfor %}
-    </ul>
-
+                            {#                <a href="/home/{{ project.id }}">#}
+                            {#                    {{ project.title }}#}
+                            {#                </a></li>#}
+                            <td><small>{{ project.author }}</small></td>
+                            <td><small>{{ project.updated_at}}</small></td>
+                        </tr>
+                    {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
 {% endblock %}

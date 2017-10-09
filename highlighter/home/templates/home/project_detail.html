@@ -1,36 +1,43 @@
 {%  extends "home/layout.html" %}
 
 {% block content %}
-    <h1>{{ project.title }}</h1>
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <h1>{{ project.title }}</h1>
 
-    {{ project.content|linebreaks }}
+                {{ project.content|linebreaks }}
 
-    <hr/>
-    <h2>댓글</h2>
-    {{ project.content_set.all }}
-    <ul>
-        {% for comment in project.comment_set.all %}
-            <li>
-                {{ comment.message }}
-                <small>by {{ comment.author}}</small>
-                <small>at {{ comment.updated_at }}</small>
-            </li>
-        {% endfor %}
-    </ul>
+                <hr/>
+                <h2>댓글</h2>
+                {{ project.content_set.all }}
+                <ul>
+                    {% for comment in project.comment_set.all %}
+                        <li>
+                            {{ comment.message }}
+                            <small>by {{ comment.author}}</small>
+                            <small>at {{ comment.updated_at }}</small>
+                        </li>
+                    {% endfor %}
+                </ul>
 
-    <hr/>
-    <h2>to-do리스트</h2>
-    {{ project.content_set.all }}
-    <ul>
-        {% for todo in project.todo_set.all %}
-            <li>
-                {{ todo.todo }}
-                <small> {{ todo.completed}}</small>
-                <small>at {{ todo.create_at}}</small>
-                <small>at {{ todo.updated_at }}</small>
-            </li>
-        {% endfor %}
-    </ul>
+                <hr/>
+                <h2>to-do리스트</h2>
+                {{ project.content_set.all }}
+                <ul>
+                    {% for todo in project.todo_set.all %}
+                        <li>
+                            {{ todo.todo }}
+                            <small> {{ todo.completed}}</small>
+                            <small>at {{ todo.create_at}}</small>
+                            <small>at {{ todo.updated_at }}</small>
+                        </li>
+                    {% endfor %}
+                </ul>
 
-    <a href="{% url "home:project_list" %}">글 목록</a>
+                <a href="{% url "home:project_list" %}" class="btn btn-primary">글 목록</a>
+            </div>
+        </div>
+    </div>
+
 {%  endblock %}
