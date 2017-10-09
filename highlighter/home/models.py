@@ -1,4 +1,5 @@
 from django.db import models
+from django.conf import settings
 
 class Project(models.Model):
 
@@ -7,7 +8,7 @@ class Project(models.Model):
         ('p', 'Published'),
     )
 
-    author = models.CharField(max_length=20) #빈칸이면 안됨
+    user = models.ForeignKey(settings.AUTH_USER_MODEL)
     title = models.CharField(max_length=100, verbose_name='제목')
     content = models.TextField(verbose_name='내용')
     tags = models.CharField(max_length=100,blank=True)

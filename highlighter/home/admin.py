@@ -6,7 +6,7 @@ from .models import Project,Comment,Tag
 
 @admin.register(Project)
 class ProjectAdmin(admin.ModelAdmin):
-    list_display = ['author','id','title','status','created_at','updated_at']
+    list_display = ['user','id','title','status','created_at','updated_at']
 
     #리스트값들이 내모델클래스의 필드와일치해야 함
 
