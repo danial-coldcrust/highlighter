@@ -5,6 +5,7 @@ from django.conf import settings
 
 class Profile(models.Model):
     user = models.ForeignKey(settings.AUTH_USER_MODEL)
+    #study_set = models.ManyToManyField('Study', blank=True)
     phone_number = models.CharField(max_length=20)
     address = models.CharField(max_length=50)
     credit = models.IntegerField()
