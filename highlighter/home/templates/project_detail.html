@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h1>{{ project.title }}</h1>
+
+{{ project.content|linebreaks }}
+
+<hr/>
+<h2>댓글</h2>
+{{ project.content_set.all }}
+<ul>
+    {% for comment in project.comment_set.all %}
+        <li>
+            {{ comment.message }}
+            <small>by {{ comment.author}}</small>
+            <small>at {{ comment.updated_at }}</small>
+        </li>
+    {% endfor %}
+</ul>
+</body>
+</html>

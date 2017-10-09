@@ -18,9 +18,11 @@
     {% for project in project_list%}
         <li>
             {{ project.id }}
-            {{ project.title }}
-            <small>{{ project.author }}</small>
-            <small>{{ project.updated_at }}</small>
+            <a href="/project/{{ project.id }}">
+                {{ project.title }}
+            </a>
+        <small>{{ project.author }}</small>
+        <small>{{ project.updated_at }}</small>
         </li>
     {% endfor %}
 </ul>

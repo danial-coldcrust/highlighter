@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Project
+from .models import Project,Comment,Tag
 # Register your models here.
 
 
@@ -22,3 +22,12 @@ class ProjectAdmin(admin.ModelAdmin):
     def make_drafted(self, request, queryset):
         updated_count = queryset.update(status='d')
         self.message_user(request, '{}건의 프로젝트를드래프상태로 변경'.format(updated_count))
+
+
+@admin.register(Comment)
+class CommentAdmin(admin.ModelAdmin):
+        pass
+
+@admin.register(Tag)
+class TagAdmin(admin.ModelAdmin):
+    list_display = ['name']
