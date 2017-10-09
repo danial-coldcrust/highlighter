@@ -7,6 +7,13 @@
 <body>
 씨발
 
+<form action="" method="get">
+    <input type="text" name="q" value="{{ q }}"/>
+    <input type="submit" value="검색" />
+
+
+</form>
+
 <ul>
     {% for project in project_list%}
         <li>
