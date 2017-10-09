@@ -12,8 +12,8 @@ class Project(models.Model):
     title = models.CharField(max_length=100, verbose_name='제목')
     content = models.TextField(verbose_name='내용')
     status = models.CharField(max_length=1, choices=STATUS_CHOICES)
-    tag_set = models.ManyToManyField('Tag', blank=True)
-    #태그는솔찍히빈칸이여도됨
+    tag_set = models.ManyToManyField('Tag',blank=True)
+    #태그는솔찍히빈칸이여도됨빈칸으로하면에러남
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
 

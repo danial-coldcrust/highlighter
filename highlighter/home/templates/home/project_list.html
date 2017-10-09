@@ -12,7 +12,7 @@
             <li>
                 {{ project.id }}
 
-                <a href="{% url "project_detail" project.id %}">
+                <a href="{% url "home:project_detail" project.id %}">
                     {{ project.title }}
                 </a></li>
 
