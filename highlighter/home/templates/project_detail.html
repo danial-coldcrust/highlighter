@@ -21,5 +21,20 @@
         </li>
     {% endfor %}
 </ul>
+
+<hr/>
+<h2>to-do리스트</h2>
+{{ project.content_set.all }}
+<ul>
+    {% for todo in project.todo_set.all %}
+        <li>
+            {{ todo.todo }}
+            <small> {{ todo.completed}}</small>
+            <small>at {{ todo.create_at}}</small>
+            <small>at {{ todo.updated_at }}</small>
+        </li>
+    {% endfor %}
+</ul>
+
 </body>
 </html>

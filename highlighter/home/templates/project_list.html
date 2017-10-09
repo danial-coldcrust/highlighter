@@ -18,9 +18,9 @@
     {% for project in project_list%}
         <li>
             {{ project.id }}
-            <a href="/project/{{ project.id }}">
+            <a href="/home/{{ project.id }}">
                 {{ project.title }}
-            </a>
+            </a></li>
         <small>{{ project.author }}</small>
         <small>{{ project.updated_at }}</small>
         </li>

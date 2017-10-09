@@ -31,6 +31,16 @@ class Comment(models.Model):
     def __str__(self):
         return self.message
 
+class Todo(models.Model):
+    project = models.ForeignKey(Project)
+    todo= models.CharField(max_length=20)
+    completed= models.BooleanField(default=False)
+    create_at = models.DateTimeField(auto_now_add=True)
+    updated_at = models.DateTimeField(auto_now=True)
+
+    def __str__(self):
+        return self.todo
+
 class Tag(models.Model):
     name = models.CharField(max_length=50,unique=True) #태그는중복되면안되니깐
     def __str__(self):

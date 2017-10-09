@@ -1,6 +1,5 @@
 from django.contrib import admin
-from .models import Project,Comment,Tag
-# Register your models here.
+from .models import Project,Comment,Tag,Todo
 
 
 
@@ -25,6 +24,10 @@ class ProjectAdmin(admin.ModelAdmin):
 
 
 @admin.register(Comment)
+class CommentAdmin(admin.ModelAdmin):
+        pass
+
+@admin.register(Todo)
 class CommentAdmin(admin.ModelAdmin):
         pass
 
