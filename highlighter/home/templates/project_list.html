@@ -6,5 +6,16 @@
 </head>
 <body>
 씨발
+
+<ul>
+    {% for project in project_list%}
+        <li>
+            {{ project.id }}
+            {{ project.title }}
+            <small>{{ project.author }}</small>
+            <small>{{ project.updated_at }}</small>
+        </li>
+    {% endfor %}
+</ul>
 </body>
 </html>
