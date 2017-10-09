@@ -7,12 +7,13 @@ class Project(models.Model):
         ('p', 'Published'),
     )
 
-    author = models.CharField(max_length=20) #빈칸이 면 안됨
+    author = models.CharField(max_length=20) #빈칸이면 안됨
     title = models.CharField(max_length=100, verbose_name='제목')
     content = models.TextField(verbose_name='내용')
     tags = models.CharField(max_length=100,blank=True)
     status = models.CharField(max_length=1, choices=STATUS_CHOICES)
-    tag_set = models.ManyToManyField('Tag')
+    tag_set = models.ManyToManyField('Tag', blank=True)
+    #태그는솔찍히빈칸이여도됨
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
 
