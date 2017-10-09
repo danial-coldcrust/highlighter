@@ -1,3 +1,6 @@
 from django.contrib import admin
+from .models import Study
 
-# Register your models here.
+@admin.register(Study)
+class CommentAdmin(admin.ModelAdmin):
+        pass
