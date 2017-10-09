@@ -11,6 +11,18 @@ def study_list(request):
         qs = qs.filter(title__icontains=q)
 
     return render(request, 'study_list.html',{
-        'project_list':qs,
+        'study_list':qs,
         'q':q,
+    })
+
+
+def study_detail(request,id):
+    # try:
+    #     project = Project.objects.get(id=id)
+    # except Project.DoesNotExist:
+    #     raise  Http404
+
+    study = get_object_or_404(Study, id=id)
+    return render(request, 'study_detail.html', {
+        'study' : study
     })

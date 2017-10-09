@@ -2,9 +2,44 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>스터디 내용보가</title>
 </head>
 <body>
+<h1>{{ study.title }}</h1>
+ {% for post in study.post_set.all%}
+        <h3>{{ post.user}}</h3>
+    {% endfor %}
 
+{{ study.content|linebreaks }}
+
+<hr/>
+<h2>공동목표todo-list</h2>
+
+<ul>
+    {% for todo in study.grouptodo_set.all %}
+        <li>
+            {{ todo.todo }}
+            <small> {{ todo.completed}}</small>
+            <small>at {{ todo.create_at}}</small>
+            <small>at {{ todo.updated_at }}</small>
+        </li>
+    {% endfor %}
+</ul>
+
+
+<hr/>
+<h2>스터디모임 게시판</h2>
+<ul>
+    {% for post in study.post_set.all%}
+        <li>
+            {{ post.id }}
+            <a href="/study/{{ post.id }}">
+                {{ post.title }}
+            </a></li>s
+        <small>{{ post.user}}</small>
+        <small>{{ post.updated_at }}</small>
+        </li>
+    {% endfor %}
+</ul>
 </body>
 </html>
