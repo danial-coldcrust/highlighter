@@ -12,3 +12,14 @@ class Study(models.Model):
 
     def __str__(self):
         return self.title
+
+
+class GroupTodo(models.Model):
+    study = models.ForeignKey(Study)
+    todo= models.CharField(max_length=20)
+    completed= models.BooleanField(default=False)
+    create_at = models.DateTimeField(auto_now_add=True)
+    updated_at = models.DateTimeField(auto_now=True)
+
+    def __str__(self):
+        return self.todo
