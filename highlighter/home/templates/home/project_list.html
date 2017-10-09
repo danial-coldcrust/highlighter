@@ -1,4 +1,4 @@
-{% extends "layout.html" %}
+{% extends "home/layout.html" %}
 
 {% block content %}
 
@@ -11,9 +11,14 @@
         {% for project in project_list%}
             <li>
                 {{ project.id }}
-                <a href="/home/{{ project.id }}">
+
+                <a href="{% url "project_detail" project.id %}">
                     {{ project.title }}
                 </a></li>
+
+{#                <a href="/home/{{ project.id }}">#}
+{#                    {{ project.title }}#}
+{#                </a></li>#}
             <small>{{ project.author }}</small>
             <small>{{ project.updated_at }}</small>
             </li>

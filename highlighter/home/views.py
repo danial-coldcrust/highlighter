@@ -10,7 +10,7 @@ def project_list(request):
     if q:
         qs = qs.filter(title__icontains=q)
 
-    return render(request, 'project_list.html',{
+    return render(request, 'home/project_list.html', {
         'project_list':qs,
         'q':q,
     })
@@ -22,6 +22,6 @@ def project_detail(request,id):
     #     raise  Http404
 
     project = get_object_or_404(Project, id=id)
-    return render(request, 'project_detail.html', {
+    return render(request, 'home/project_detail.html', {
         'project' : project
     })

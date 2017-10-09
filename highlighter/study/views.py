@@ -10,7 +10,7 @@ def study_list(request):
     if q:
         qs = qs.filter(title__icontains=q)
 
-    return render(request, 'study_list.html',{
+    return render(request, 'study/study_list.html', {
         'study_list':qs,
         'q':q,
     })
@@ -23,6 +23,6 @@ def study_detail(request,id):
     #     raise  Http404
 
     study = get_object_or_404(Study, id=id)
-    return render(request, 'study_detail.html', {
+    return render(request, 'study/study_detail.html', {
         'study' : study
     })
