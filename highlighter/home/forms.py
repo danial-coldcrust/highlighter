@@ -1,11 +1,26 @@
 from django import forms
+from .models import Project
 
-def min_length_3_validator(value):
-    if len(value) < 3:
-        raise forms.ValidationError('3글자이상입력하세요')
-    pass
 
-class ProjectForm(forms.Form):
-    title = forms.CharField(validators=[min_length_3_validator])
-    content = forms.CharField(widget=forms.Textarea) #위젯설정해줌
+class ProjectForm(forms.ModelForm):
+    class Meta:
+        model = Project
+        fields = ['user','title','content']
 
+    # title = forms.CharField(validators=[min_length_3_validator])
+    # content = forms.CharField(widget=forms.Textarea) #위젯설정해줌
+    #
+
+
+
+    # def save(self,commit):
+    #     project = Project()
+    #
+    #     # project.user_id = '1'
+    #     # 딕셔너리
+    #     # project.title = form.cleaned_data['title']
+    #     # project.content= form.cleaned_data['content']
+    #     project = Project(**self.cleaned_data)  # 이방식쓸려면modelform써야됨
+    #     if commit:
+    #         project.save()
+    #         return project

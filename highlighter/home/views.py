@@ -9,14 +9,8 @@ def project_new(request):
         form = ProjectForm(request.POST,request.FILES)
         if form.is_valid():#모든validate호출하기
             project = Project()
-            project.user_id = '1'
-            # 딕셔너리
-            project.title = form.cleaned_data['title']
-            project.content= form.cleaned_data['content']
-            project.save()
+            project = form.save()
 
-
-            print(form.cleaned_data)
             return redirect('/home/')
         else:
             form.errors

@@ -1,5 +1,12 @@
 from django.db import models
 from django.conf import settings
+from django import forms
+
+
+def min_length_3_validator(value):
+    if len(value) < 3:
+        raise forms.ValidationError('3글자이상입력하세요')
+    pass
 
 class Project(models.Model):
 
@@ -9,7 +16,7 @@ class Project(models.Model):
     )
 
     user = models.ForeignKey(settings.AUTH_USER_MODEL)
-    title = models.CharField(max_length=100, verbose_name='제목')
+    title = models.CharField(max_length=100, verbose_name='제목',validators=[min_length_3_validator])
     content = models.TextField(verbose_name='내용')
     status = models.CharField(max_length=1, choices=STATUS_CHOICES)
     tag_set = models.ManyToManyField('Tag',blank=True)
