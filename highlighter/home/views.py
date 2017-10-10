@@ -23,6 +23,26 @@ def project_new(request):
         'form': form,
     })
 
+def project_edit(request, id):
+    project = get_object_or_404(Project, id=id)
+    if request.method == 'POST':
+        form = ProjectForm(request.POST,request.FILES, instance=project) #project_new에인스턴스추가만하면 수정기능 끝
+        if form.is_valid():#모든validate호출하기
+            project = Project()
+            project = form.save()
+
+            return redirect('/home/')
+        else:
+            form.errors
+
+    else:
+        form = ProjectForm(instance=project) #project_new에인스턴스추가만하면 수정기능 끝
+        #처음에열릴때
+
+    return render(request,'home/project_form.html',{
+        'form': form,
+    })
+
 def project_list(request):
     qs = Project.objects.all()
 
