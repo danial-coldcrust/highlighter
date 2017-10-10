@@ -7,5 +7,5 @@ def min_length_3_validator(value):
 
 class ProjectForm(forms.Form):
     title = forms.CharField(validators=[min_length_3_validator])
-    content = forms.CharField(widhet=forms.Textarea) #위젯설정해줌
+    content = forms.CharField(widget=forms.Textarea) #위젯설정해줌
 
