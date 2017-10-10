@@ -5,7 +5,8 @@ from .models import Project
 class ProjectForm(forms.ModelForm):
     class Meta:
         model = Project
-        fields = ['user','title','content']
+        #fields = ['user','title','content']
+        fields = '__all__'
 
     # title = forms.CharField(validators=[min_length_3_validator])
     # content = forms.CharField(widget=forms.Textarea) #위젯설정해줌

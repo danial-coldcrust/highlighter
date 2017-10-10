@@ -3,7 +3,7 @@
 {% block content %}
     <div class="container">
         <div class="jumbotron">
-            <h1>HighLighter Project <sup>by 20124083</sup></h1>
+            <h1>HighLighter Project <sup>by coldcrust</sup></h1>
             <p>여러분의 자기관리 페이스메이커가 되어드리겠습니다.</p>
             <p>
                 <a class="btn btn-lg btn-primary" href="http://facebook.com/groups/askdjango">
@@ -24,6 +24,9 @@
                     </li>
                 </ul>
             </div>
+
+            <a href="{% url "home:project_new" %}" class="btn btn-primary pull-right">새글 쓰기</a>
+
                 <p>
                 <form action="" method="get">
                     <input type="text" name="q" value="{{ q }}" />
