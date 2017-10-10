@@ -23,7 +23,7 @@ class Project(models.Model):
 class Comment(models.Model):
     project = models.ForeignKey(Project)
     author = models.CharField(max_length=20)
-    message = models.TextField()
+    message = models.TextField() 
     create_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
 
