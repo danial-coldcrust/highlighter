@@ -6,6 +6,12 @@
             <div class="col-sm-12">
                 <h1>{{ project.title }}</h1>
 
+
+                {% if project.photo %}
+                    {#                <img src="/media/{{ project.photo }}" style="max-width: 100%" />#}
+                    <img src="{{ project.photo.url }}" style="max-width: 100%" />
+                {%  endif %}
+
                 {{ project.content|linebreaks }}
 
                 <hr/>
