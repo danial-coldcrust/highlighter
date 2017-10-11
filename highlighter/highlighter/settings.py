@@ -39,7 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'debug_toolbar',
     'bootstrap3',
-    'imagekit'
+    'imagekit',
     'accounts',
     'study',
     'home',
