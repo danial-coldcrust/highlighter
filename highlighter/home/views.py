@@ -1,3 +1,4 @@
+from django.contrib import messages
 from django.http import Http404
 from django.shortcuts import get_object_or_404,render,redirect
 from .models import Project
@@ -10,6 +11,7 @@ def project_new(request):
         if form.is_valid():#모든validate호출하기
             project = Project()
             project = form.save()
+            messages.success(request,' 새 포스팅을 저장했다습니다')
 
             return redirect('/home/')
         else:

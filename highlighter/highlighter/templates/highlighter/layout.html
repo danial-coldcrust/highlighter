@@ -1,3 +1,4 @@
+{%  load static %}
 <!doctype html>
 <html>
 <head>
@@ -12,18 +13,8 @@
     <!-- bootstrap: cosmo theme -->
     <!-- <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootswatch/3.3.7/cosmo/bootstrap.min.css" /> -->
 
-    <style>
-        html { position: relative; min-height: 100%; }
-        body { margin-bottom: 60px; }
-        #page-footer {
-            position: absolute;
-            bottom: 0;
-            width: 100%;
-            height: 60px;
-            line-height: 60px;
-            background-color: #f5f5f5;
-        }
-    </style>
+{#    <link rel="stylesheet" href="/static/style.css" />#}
+<link rel="stylesheet" href="{% static style.css %}" />
 </head>
 
 <body>
@@ -50,6 +41,34 @@
             </div>
         </div>
     </nav>
+{#    <div class="container">#}
+{#        <div class="alert alert-info">#}
+{##}
+{#        </div>#}
+{##}
+{#        <div class="alert alert-success">#}
+{##}
+{#        </div>#}
+{##}
+{#        <div class="alert alert-danger">#}
+{##}
+{#        </div>#}
+{##}
+{#        <div class="alert alert-warning">#}
+{##}
+{#        </div>#}
+{#    </div>#}
+
+    {% if messages %}
+        <div class="container">
+            <div class="alert alert-{{ message.tags }}">
+                {% for message in messages %}
+                    {{  message.tags }} {#  메세지level #}
+                    {{  message.message }}{#  실제메세 지내용 #}
+                {% endfor %}
+            </div>
+        </div>
+    {% endif %}
 
 
     {% block content %}
