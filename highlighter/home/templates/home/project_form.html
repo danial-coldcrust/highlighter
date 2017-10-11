@@ -34,7 +34,8 @@
     <div class="container">
         <div class="row">
             <div class="col-md-6 col-md-offset-3">
-                <form action="" method="post">
+{#                enctype안하면사진안올라감#}
+                <form action="" method="post" enctype="multipart/form-data">
                     {% csrf_token %}
                     {% bootstrap_form form %}
                     <input type="submit" class="btn btn-primary">
