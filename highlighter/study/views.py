@@ -23,6 +23,9 @@ def study_detail(request,id):
     #     raise  Http404
 
     study = get_object_or_404(Study, id=id)
+    # return render(request, 'study/study_detail.html', {
+    #     'study' : study
+    # })
     return render(request, 'study/study_detail.html', {
         'study' : study
     })
