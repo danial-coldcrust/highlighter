@@ -67,3 +67,10 @@ def project_detail(request,id):
     return render(request, 'home/project_detail.html', {
         'project' : project
     })
+
+def project_like(request,id):
+    project = get_object_or_404(Project, id=id)
+    project.like += 1
+    project.save()
+
+    return redirect('/home/'+id)

@@ -29,7 +29,7 @@ class Project(models.Model):
     # photo_thumbnail = ImageSpecField(source='photo', processors=[Thumbnail(300, 300)], format='JPEG',
     #                                         options={'quality', 60})
     status = models.CharField(max_length=1, choices=STATUS_CHOICES)
-    value = models.IntegerField()
+    like = models.IntegerField()
     tag_set = models.ManyToManyField('Tag',blank=True)
     #태그는솔찍히빈칸이여도됨
     created_at = models.DateTimeField(auto_now_add=True)
