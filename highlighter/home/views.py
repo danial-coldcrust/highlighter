@@ -2,6 +2,7 @@ from django.contrib import messages
 from django.http import Http404
 from django.shortcuts import get_object_or_404,render,redirect
 from .models import Project
+from accounts.models import Profile
 from .forms import ProjectForm
 # Create your views here.
 
@@ -48,6 +49,8 @@ def project_edit(request, id):
 def project_list(request):
     qs = Project.objects.all()
 
+
+
     q = request.GET.get('q','')
     if q:
         qs = qs.filter(title__icontains=q)
@@ -68,9 +71,16 @@ def project_detail(request,id):
         'project' : project
     })
 
+list = list()
 def project_like(request,id):
     project = get_object_or_404(Project, id=id)
-    project.like += 1
-    project.save()
+    user = request.user
+
+    if user in list:
+        pass
+    else:
+        project.like += 1
+        project.save()
+        list.append(user)
 
     return redirect('/home/'+id)
