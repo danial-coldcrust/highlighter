@@ -3,6 +3,7 @@ from django.http import Http404
 from django.shortcuts import get_object_or_404,render,redirect
 from .models import Project
 from accounts.models import Profile
+from accounts.models import User
 from .forms import ProjectForm
 # Create your views here.
 
@@ -71,16 +72,23 @@ def project_detail(request,id):
         'project' : project
     })
 
-list = list()
+ulist = list()
+plist = list()
 def project_like(request,id):
     project = get_object_or_404(Project, id=id)
-    user = request.user
+    login_user = request.user
+    user = User.objects.get(username=login_user)
+    profile = Profile.objects.get(user_id=user.id)
 
-    if user in list:
+
+    if login_user in ulist and project.id in plist:
         pass
     else:
         project.like += 1
         project.save()
-        list.append(user)
+        ulist.append(login_user)
+        plist.append(project.id)
+        profile.array_rated_project_indexs += (project.title+', ')
+        profile.save()
 
     return redirect('/home/'+id)
