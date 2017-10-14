@@ -8,4 +8,5 @@ urlpatterns = [
     url(r'^$',views.project_list, name='project_list'),
     url(r'^(?P<id>\d+)/$',views.project_detail, name='project_detail'),
     url(r'^(?P<id>\d+)/like$',views.project_like, name='project_like'),
+    url(r'^rcmd/$',views.project_rcmd, name='project_rcmd'),
 ]

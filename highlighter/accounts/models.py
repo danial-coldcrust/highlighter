@@ -8,5 +8,5 @@ class Profile(models.Model):
     phone_number = models.CharField(max_length=20)
     address = models.CharField(max_length=50)
     credit = models.IntegerField()
-    array_rated_project_indexs = models.TextField()
-    array_rate_project_indexs = models.TextField()
+    array_rated_project_indexs = models.TextField(blank=True)
+    array_rate_project_indexs = models.TextField(blank=True)

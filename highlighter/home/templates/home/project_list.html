@@ -7,8 +7,8 @@
             <h1>HighLighter Project <sup>by coldcrust</sup></h1>
             <p>여러분의 자기관리 페이스메이커가 되어드리겠습니다.</p>
             <p>
-                <a class="btn btn-lg btn-primary" href="http://facebook.com/groups/askdjango">
-                    목표Project 바로 등록 &raquo;
+                <a class="btn btn-lg btn-primary" href="{% url "home:project_rcmd" %}">
+                    recommend for current loging user!
                 </a>
             </p>
         </div>
@@ -18,7 +18,7 @@
             <div class ="alert alert-info">
                 <ul>
                     <li>
-                        http://localhost:8000/blog 주소로 접속.
+                        http://localhost:8000/home 주소로 접속.
                     </li>
                     <li>
                         빨리졸업하고싶다.졸업하고 편의점알바하면서 살아야지.

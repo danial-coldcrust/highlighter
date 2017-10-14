@@ -77,8 +77,8 @@ plist = list()
 def project_like(request,id):
     project = get_object_or_404(Project, id=id)
     login_user = request.user
-    user = User.objects.get(username=login_user)
-    profile = Profile.objects.get(user_id=user.id)
+    user = User.objects.get(username=login_user)   #FIXME: TO 404
+    profile = Profile.objects.get(user_id=user.id) #FIXME: TO 404
 
 
     if login_user in ulist and project.id in plist:
@@ -88,7 +88,14 @@ def project_like(request,id):
         project.save()
         ulist.append(login_user)
         plist.append(project.id)
-        profile.array_rated_project_indexs += (project.title+', ')
+        profile.array_rated_project_indexs += ('\''+project.title+'\', ')
         profile.save()
 
     return redirect('/home/'+id)
+
+def project_rcmd(request):
+
+    
+    return render(request, 'home/project_rcmd.html',{
+
+    })
