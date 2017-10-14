@@ -10,3 +10,6 @@ class Profile(models.Model):
     credit = models.IntegerField()
     array_rated_project_indexs = models.TextField(blank=True)
     array_rate_project_indexs = models.TextField(blank=True)
+
+    def __str__(self):
+        return str(self.user)
