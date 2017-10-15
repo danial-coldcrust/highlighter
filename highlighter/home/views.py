@@ -6,6 +6,9 @@ from accounts.models import Profile
 from accounts.models import User
 from .forms import ProjectForm
 # Create your views here.
+import math, random
+from collections import defaultdict, Counter
+
 
 def project_new(request):
     if request.method == 'POST':
@@ -80,21 +83,118 @@ def project_like(request,id):
     user = get_object_or_404(User,username=login_user)
     profile = get_object_or_404(Profile,user_id=user.id)
 
-
     if login_user in ulist and project.id in plist:
+        print("login_usr: {}, project.id: {}",format(login_user ),format(project.id))
         pass
     else:
         project.like += 1
         project.save()
         ulist.append(login_user)
         plist.append(project.id)
-        profile.array_rated_project_indexs += ('\''+project.title+'\', ')
+        profile.array_rated_project_indexs += (str(project.id)+',')
         profile.save()
 
     return redirect('/home/'+id)
 
 def project_rcmd(request):
+    login_user = request.user
+    user = get_object_or_404(User,username=login_user)
+    profile = get_object_or_404(Profile, user_id=user.id)
+    login_user_rated_list_field = profile.array_rated_project_indexs
+    users = User.objects.all()
+
+    login_user_rated_list = login_user_rated_list_field.split(',')[0:-1]
+    #print(login_user_rated_list )
+    users_interests = []
+    login_user_id = None
+    for cnt in range(len(users)):
+        profile = get_object_or_404(Profile, user_id=users[cnt].id)
+        users_profile_rated = profile.array_rated_project_indexs.split(',')[0:-1]
+        if login_user_rated_list == users_profile_rated:
+            login_user_id = cnt
+            users_interests.append(users_profile_rated)
+        else:
+            users_interests.append(users_profile_rated)
+
+    #print(users_interests)
+    #print(login_user_id)
+
+
+    def dot(v, w):
+        return sum(v_i * w_i for v_i, w_i in zip(v, w))
+
+    def cosine_similarity(v, w):
+        return dot(v, w) / math.sqrt(dot(v, v) * dot(w, w))
+
+    unique_interests = sorted(list({interest
+                                    for user_interests in users_interests
+                                    for interest in user_interests}))
+    #print("unique_interests", unique_interests)
+
+    def make_user_interest_vector(user_interests):
+        return [1 if interest in user_interests else 0 for interest in unique_interests]
+
+    # print("make_user_interest_vector:",make_user_interest_vector(users_interests[0]))
+    # print("make_user_interest_vector:",make_user_interest_vector(users_interests[1]))
+
+
+    user_interest_matrix = list(map(make_user_interest_vector, users_interests))
+    ##print(user_interest_matrix)
+
+    # inverse
+    interest_user_matrix = [[user_interest_vector[j]
+                             for user_interest_vector in user_interest_matrix]
+                            for j, _ in enumerate(unique_interests)]
+    ##print(interest_user_matrix)
+
+    interest_similarities = [[cosine_similarity(user_vector_i, user_vector_j)
+                              for user_vector_j in interest_user_matrix]
+                             for user_vector_i in interest_user_matrix]
+
+    #print(interest_similarities)
+
+
+
+
+
+
+    def most_similar_interests_to(interest_id):
+        similarities = interest_similarities[interest_id]
+        pairs = [(unique_interests[other_interest_id], similarity)
+                 for other_interest_id, similarity in enumerate(similarities)
+                 if interest_id != other_interest_id and similarity > 0]
+        return sorted(pairs,
+                      key=lambda pair: pair[1],
+                      reverse=True)
+
+    #print('most_similar_interests_to:',most_similar_interests_to(login_user_id))
+
+    def item_based_suggestions(user_id, include_current_interests=False):
+        suggestions = defaultdict(float)
+        user_interest_vector = user_interest_matrix[user_id]
+        for interest_id, is_interested in enumerate(user_interest_vector):
+            if is_interested == 1:
+                similar_interests = most_similar_interests_to(interest_id)
+                for interest, similarity in similar_interests:
+                    suggestions[interest] += similarity
+
+        suggestions = sorted(suggestions.items(),
+                             key=lambda pair: pair[1],
+                             reverse=True)
+
+        if include_current_interests:
+            return suggestions
+        else:
+            # return [(suggestion, weight)
+            return [suggestion
+                    for suggestion, weight in suggestions
+                    if suggestion not in users_interests[user_id]]
+
+    #print("item_based_suggestions",item_based_suggestions(login_user_id))
+
+    #render with project_list
+    #project = get_object_or_404(Project, id=)
 
     return render(request, 'home/project_rcmd.html',{
-
+        'item_based_suggestions': item_based_suggestions(login_user_id)
     })
