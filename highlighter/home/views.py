@@ -75,22 +75,33 @@ def project_detail(request,id):
         'project' : project
     })
 
-ulist = list()
-plist = list()
+
+
+u_dict = {}
 def project_like(request,id):
+
     project = get_object_or_404(Project, id=id)
     login_user = request.user
     user = get_object_or_404(User,username=login_user)
     profile = get_object_or_404(Profile,user_id=user.id)
 
-    if login_user in ulist and project.id in plist:
-        print("login_usr: {}, project.id: {}",format(login_user ),format(project.id))
+    if login_user in u_dict and project.id in u_dict[login_user]:
+        print("login_usr: {}, project.id: {}",format(login_user),format(project.id))
         pass
     else:
         project.like += 1
         project.save()
-        ulist.append(login_user)
-        plist.append(project.id)
+        if login_user in u_dict:
+            global dict
+            u_dict[login_user].add(project.id)
+        else:
+            u_dict[login_user] = set()
+            u_dict[login_user].add(project.id)
+
+
+        print(u_dict)
+
+
         profile.array_rated_project_indexs += (str(project.id)+',')
         profile.save()
 

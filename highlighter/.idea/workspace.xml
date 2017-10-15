@@ -23,18 +23,18 @@
       <file leaf-file-name="views.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/home/views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="288">
-              <caret line="89" column="25" lean-forward="true" selection-start-line="89" selection-start-column="25" selection-end-line="89" selection-end-column="25" />
+            <state relative-caret-position="396">
+              <caret line="94" column="19" lean-forward="false" selection-start-line="94" selection-start-column="19" selection-end-line="94" selection-end-column="19" />
               <folding>
                 <element signature="e#0#35#0" expanded="true" />
-                <element signature="e#3544#3591#0" expanded="false" />
-                <element signature="e#3634#3685#0" expanded="false" />
-                <element signature="e#3722#3873#0" expanded="false" />
-                <element signature="e#3985#4065#0" expanded="false" />
-                <element signature="e#4330#4359#0" expanded="false" />
-                <element signature="e#4403#4506#0" expanded="false" />
-                <element signature="e#4640#4761#0" expanded="false" />
-                <element signature="e#4931#5311#0" expanded="false" />
+                <element signature="e#3706#3753#0" expanded="false" />
+                <element signature="e#3796#3847#0" expanded="false" />
+                <element signature="e#3884#4035#0" expanded="false" />
+                <element signature="e#4147#4227#0" expanded="false" />
+                <element signature="e#4492#4521#0" expanded="false" />
+                <element signature="e#4565#4668#0" expanded="false" />
+                <element signature="e#4802#4923#0" expanded="false" />
+                <element signature="e#5093#5473#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -102,6 +102,7 @@
       <find>btn</find>
       <find>project</find>
       <find>print</find>
+      <find>login_user</find>
     </findStrings>
   </component>
   <component name="IdeDocumentHistory">
@@ -687,18 +688,18 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/home/views.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="288">
-          <caret line="89" column="25" lean-forward="true" selection-start-line="89" selection-start-column="25" selection-end-line="89" selection-end-column="25" />
+        <state relative-caret-position="396">
+          <caret line="94" column="19" lean-forward="false" selection-start-line="94" selection-start-column="19" selection-end-line="94" selection-end-column="19" />
           <folding>
             <element signature="e#0#35#0" expanded="true" />
-            <element signature="e#3544#3591#0" expanded="false" />
-            <element signature="e#3634#3685#0" expanded="false" />
-            <element signature="e#3722#3873#0" expanded="false" />
-            <element signature="e#3985#4065#0" expanded="false" />
-            <element signature="e#4330#4359#0" expanded="false" />
-            <element signature="e#4403#4506#0" expanded="false" />
-            <element signature="e#4640#4761#0" expanded="false" />
-            <element signature="e#4931#5311#0" expanded="false" />
+            <element signature="e#3706#3753#0" expanded="false" />
+            <element signature="e#3796#3847#0" expanded="false" />
+            <element signature="e#3884#4035#0" expanded="false" />
+            <element signature="e#4147#4227#0" expanded="false" />
+            <element signature="e#4492#4521#0" expanded="false" />
+            <element signature="e#4565#4668#0" expanded="false" />
+            <element signature="e#4802#4923#0" expanded="false" />
+            <element signature="e#5093#5473#0" expanded="false" />
           </folding>
         </state>
       </provider>
