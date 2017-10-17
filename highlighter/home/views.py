@@ -3,7 +3,8 @@ from django.http import Http404
 from django.shortcuts import get_object_or_404,render,redirect
 from .models import Project
 from accounts.models import Profile
-from accounts.models import User
+from django.contrib.auth.models import User
+from django.contrib.auth import get_user_model
 from .forms import ProjectForm
 # Create your views here.
 import math, random
@@ -98,7 +99,6 @@ def project_like(request,id):
             u_dict[login_user] = set()
             u_dict[login_user].add(project.id)
 
-
         print(u_dict)
 
 
@@ -109,23 +109,39 @@ def project_like(request,id):
 
 def project_rcmd(request):
     login_user = request.user
+    User = get_user_model()
     user = get_object_or_404(User,username=login_user)
     profile = get_object_or_404(Profile, user_id=user.id)
     login_user_rated_list_field = profile.array_rated_project_indexs
     users = User.objects.all()
 
     login_user_rated_list = login_user_rated_list_field.split(',')[0:-1]
-    #print(login_user_rated_list )
+    print(login_user_rated_list)
     users_interests = []
     login_user_id = None
-    for cnt in range(len(users)):
-        profile = get_object_or_404(Profile, user_id=users[cnt].id)
+
+    # for cnt in range(len(users)):
+    #     profile = get_object_or_404(Profile, user_id=users[cnt].id)
+    #     users_profile_rated = profile.array_rated_project_indexs.split(',')[0:-1]
+    #     print(users_profile_rated)
+    #
+    #     if login_user_rated_list == users_profile_rated:
+    #         login_user_id = cnt
+    #         # print(login_user_id)
+    #         users_interests.append(users_profile_rated)
+    #     else:
+    #         users_interests.append(users_profile_rated)
+
+    for user in users:
+        print(user.id,user)
+        profile = get_object_or_404(Profile,user_id=user.id)
         users_profile_rated = profile.array_rated_project_indexs.split(',')[0:-1]
-        if login_user_rated_list == users_profile_rated:
+        users_interests.append(users_profile_rated)
+
+    for cnt in range(len(users_interests)):
+        if login_user_rated_list == users_interests[cnt]:
             login_user_id = cnt
-            users_interests.append(users_profile_rated)
-        else:
-            users_interests.append(users_profile_rated)
+            print(cnt)
 
     #print(users_interests)
     #print(login_user_id)
@@ -204,7 +220,7 @@ def project_rcmd(request):
     #print("item_based_suggestions",item_based_suggestions(login_user_id))
 
     #render with project_list
-    #project = get_object_or_404(Project, id=)
+    #project = get_object_or_404(Project, id=login_user_id)
 
     return render(request, 'home/project_rcmd.html',{
         'item_based_suggestions': item_based_suggestions(login_user_id)
