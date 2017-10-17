@@ -5,10 +5,6 @@ from imagekit.models import ImageSpecField
 from imagekit.processors import Thumbnail
 
 
-
-
-
-
 def min_length_3_validator(value):
     if len(value) < 3:
         raise forms.ValidationError('3글자이상입력하세요')

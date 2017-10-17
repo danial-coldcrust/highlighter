@@ -11,9 +11,7 @@
                 {% if project.photo %}
                     {#                <img src="/media/{{ project.photo }}" style="max-width: 100%" />#}
                     <img src="{{ project.photo.url }}" style="max-width: 100%" />
-
-{#                    {% thumbnail "200x100" project.photo -- style="" onclick="" class=""%}#}
-
+{#                   {% thumbnail "200x100" project.photo -- style="" onclick="" class=""%}#}
                 {%  endif %}
 
                 {{ project.content|linebreaks }}

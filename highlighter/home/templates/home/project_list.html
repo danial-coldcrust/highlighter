@@ -1,4 +1,5 @@
 {% extends "home/layout.html" %}
+{%  load imagekit %}
 
 {% block content %}
 
@@ -15,18 +16,18 @@
 
         <div class="row">
             <div class="col-sm-12">
-            <div class ="alert alert-info">
-                <ul>
-                    <li>
-                        http://localhost:8000/home 주소로 접속.
-                    </li>
-                    <li>
-                        빨리졸업하고싶다.졸업하고 편의점알바하면서 살아야지.
-                    </li>
-                </ul>
-            </div>
+                <div class ="alert alert-info">
+                    <ul>
+                        <li>
+                            http://localhost:8000/home 주소로 접속.
+                        </li>
+                        <li>
+                            빨리졸업하고싶다.졸업하고 편의점알바하면서 살아야지.
+                        </li>
+                    </ul>
+                </div>
 
-            <a href="{% url "home:project_new" %}" class="btn btn-primary pull-right">새글 쓰기</a>
+                <a href="{% url "home:project_new" %}" class="btn btn-primary pull-right">새글 쓰기</a>
 
                 <p>
                 <form action="" method="get">
@@ -38,6 +39,7 @@
                     <thead>
                     <tr>
                         <th>id</th>
+                        <th>thumbnail</th>
                         <th>title</th>
                         <th>author</th>
                         <th>updated_at</th>
@@ -45,9 +47,18 @@
 
                     </thead>
                     <tbody>
+
+
                     {% for project in project_list%}
                         <tr>
+
                             <td>{{ project.id }}</td>
+
+                            <td>
+                                {% if project.photo %}
+                                    {% thumbnail "200x100" project.photo -- style="" onclick="" class=""%}
+                                {%  endif %}
+                            </td>
 
                             <td>
                                 <a href="{% url "home:project_detail" project.id %}">
