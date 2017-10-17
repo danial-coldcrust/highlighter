@@ -12,6 +12,8 @@ urlpatterns = [
     url(r'^home/',include('home.urls',namespace='home')),
     url(r'^study/',include('study.urls',namespace='study')),
     url(r'^accounts/',include('accounts.urls')),
+    url(r'^accounts/', include('allauth.urls')),
+
 ]
 
 if settings.DEBUG:

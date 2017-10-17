@@ -1,5 +1,5 @@
 from django import forms
-from django.contrib.auth.forms import UserCreationForm
+from django.contrib.auth.forms import UserCreationForm, AuthenticationForm
 from .models import Profile
 class SignupForm(UserCreationForm):
     phone_number = forms.CharField()
@@ -17,3 +17,7 @@ class SignupForm(UserCreationForm):
             credit = 1,
         )
         return user
+
+
+class LoginForm(AuthenticationForm):
+    pass
