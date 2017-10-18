@@ -10,43 +10,125 @@
     {# <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootswatch/3.3.7/flatly/bootstrap.min.css" /> #}
     {% comment %}<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootswatch/3.3.7/journal/bootstrap.min.css" />{% endcomment %}
     <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootswatch/3.3.7/flatly/bootstrap.min.css" />
+    {% block extra_head %}{% endblock %}
     <!-- bootstrap: cosmo theme -->
     <!-- <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootswatch/3.3.7/cosmo/bootstrap.min.css" /> -->
 
-{#    <link rel="stylesheet" href="/static/style.css" />#}
-<link rel="stylesheet" href="{% static style.css %}" />
+    {#    <link rel="stylesheet" href="/static/style.css" />#}
+    <link rel="stylesheet" href="{% static style.css %}" />
 </head>
 
 <body>
-    <nav class="navbar navbar-default">
-        <div class="container">
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar">
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                <a class="navbar-brand" href="{% url "root" %}">HighLighter</a>
-            </div>
-            <div id="navbar" class="collapse navbar-collapse">
-                <ul class="nav navbar-nav">
-                    <li class="active"><a href="{% url "root" %}">Home</a></li>
-                    <li><a href="#">About</a></li>
-                    <li><a href="#">Contact</a></li>
+<nav class="navbar navbar-default">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="{% url "root" %}">HighLighter</a>
+        </div>
+        <div id="navbar" class="collapse navbar-collapse">
+            <ul class="nav navbar-nav">
+                <li class="active"><a href="{% url "root" %}">Home</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+                {% if not user.is_authenticated %}
+                    <li><a href="{% url "signup" %}">회원가입</a></li>
+                    {#                        next is current page and request. is context_processor#}
+                    <li><a href="{% url "login" %}?next={{ request.path }}">로그인</a></li>
+                {% else %}
+                    <li><a href="{% url "profile" %}">프로필</a></li>
+                    <li><a href="{% url "logout" %}?next={{ request.path }}">로그아웃</a></li>
+                {% endif %}
+            </ul>
+        </div>
+    </div>
+</nav>
+<div class="con container-fluid">
+    <div class="row">
+        <div class="col-sm-3 col-md-2 sidebar">
+            <ul class="nav nav-sidebar">
+                <li>
+                    <a href="#">HOME</a>
+                </li>
+                <ul class="nav nav-sidebar">
+                    <li>
+                        <a href="#">PROJECT</a>
+                    </li>
                 </ul>
-                <ul class="nav navbar-nav navbar-right">
-                    {% if not user.is_authenticated %}
-                        <li><a href="{% url "signup" %}">회원가입</a></li>
-{#                        next is current page and request. is context_processor#}
-                        <li><a href="{% url "login" %}?next={{ request.path }}">로그인</a></li>
-                    {% else %}
-                        <li><a href="{% url "profile" %}">프로필</a></li>
-                        <li><a href="{% url "logout" %}?next={{ request.path }}">로그아웃</a></li>
-                    {% endif %}
+                <ul class="nav nav-sidebar">
+                    <li>
+                        <a href="#">STUDY</a>
+                    </li>
                 </ul>
+                <hr/>
+                <ul class="nav nav-sidebar">
+                    <li>
+                        <a >
+                            인기프로젝트
+                        </a>
+                    </li>
+                    <a href="" ><li>토익 900점 도전 프로젝트</li></a>
+                    <li> 추성훈처럼 몸짱 도전</li>
+                    <li>월 30만원씩 적금</li>
+                    <div class="collapse" id="collapsePro">
+                        <li><a>낑깡</a></li>
+                        <li><a>낑깡</a></li>
+                        <li><a>낑깡</a></li>
+                    </div>
+                    <li><a href="#collapsePro" data-toggle="collapse" aria-expanded="false" aria-controls="collapsePro">더보기<span class="caret"></span></a></li>
+                </ul>
+                <hr/>
+                <ul class="nav nav-sidebar">
+                    <li>
+                        <a>
+                            인기스터디
+                        </a>
+                    </li>
+                    <li>tofle 900</li>
+                    <a href="" ><li>9급 공무원 합격 기원 스터디</li></a>
+                    <li>7급 공무원 합격 기원 스터디</li>
+                    <div class="collapse" id="collapseStu">
+                        <li><a>낑</a></li>
+                        <li><a>낑</a></li>
+                        <li><a>낑</a></li>
+                    </div>
+                    <li><a href="#collapseStu" data-toggle="collapse" aria-expanded="false" aria-controls="collapseStu">더보기<span class="caret"></span></a></li>
+                </ul>
+            </ul>
+        </div>
+        <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
+            {% if messages %}
+                <div class="alert alert-{{ message.tags }}">
+                    {% for message in messages %}
+                        {{  message.tags }} {#  메세지level #}
+                        {{  message.message }}{#  실제메세 지내용 #}
+                    {% endfor %}
+                </div>
+            {% endif %}
+
+        </div>
+        {% block content %}
+        {% endblock %}
+        <div id="page-footer">
+            <div class="container">
+                <p class="text-muted">
+                    &copy; ColdCrusg
+                    피자한판드세요
+                </p>
             </div>
         </div>
-    </nav>
+    </div>
+</div>
+
+
+
+
+
 {#    <div class="container">#}
 {#        <div class="alert alert-info">#}
 {##}
@@ -65,28 +147,71 @@
 {#        </div>#}
 {#    </div>#}
 
-    {% if messages %}
-        <div class="container">
-            <div class="alert alert-{{ message.tags }}">
-                {% for message in messages %}
-                    {{  message.tags }} {#  메세지level #}
-                    {{  message.message }}{#  실제메세 지내용 #}
-                {% endfor %}
-            </div>
-        </div>
-    {% endif %}
 
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<script>
+    $(function () {
+        $(document).ready(function () {
+            $('#addItem').on('click', addItem);
+            $('#todos').on('change', '.completeItem', completeItem);
+            $('#todos').on('click', '.checkItem', checkItem);
+            $('#todos').on('click', '.deleteItem', deleteItem);
+            $('#todos').on('click', '.todoText', startEditing);
+            $('#todos').on('click', '.saveItem', stopEditing);
+            $('#newTodo').on('keypress', function (event) {
+                if (event.which === 13) {
+                    addItem();
+                    event.preventDefault();
+                }
+            });
 
-    {% block content %}
-    {% endblock %}
+            function startEditing(event) {
+                var taskLi = $(this).parent();
+                var currentText = taskLi.find('.todoText').text();
+                taskLi.find('.editText').val(currentText);
+                taskLi.find('.editText').show();
+                taskLi.find('.saveItem').show();
+                taskLi.find('.todoText').hide();
+            }
 
-    <div id="page-footer">
-        <div class="container">
-            <p class="text-muted">
-                &copy; ColdCrusg
-                피자한판드세요
-            </p>
-        </div>
-    </div>
+            function stopEditing(event) {
+                $(this).hide();
+                var taskLi = $(this).parent();
+                var newValue = taskLi.find('.editText').val();
+                taskLi.find('.editText').hide();
+                taskLi.find('.todoText').text(newValue);
+                taskLi.find('.todoText').show();
+            }
+
+            function addItem(event) {
+                var newTodoText = $('#newTodo').val();
+                if (newTodoText === "")
+                    alert("할일을 입력하시오!");
+                else
+                    $('#todos').append('<li><input class="completeItem" type="checkbox"><span class="todoText"> ' + newTodoText +
+                        '</span><input type="text" class="editText"><button class="btn btn-success saveItem">save</button>' +
+                        '<span class="glyphicon glyphicon-trash deleteItem"></span></li>');
+                $('#newTodo').val("");
+            }
+
+            function deleteItem(event) {
+                event.preventDefault();
+                $(this).parent().remove();
+            }
+
+            function checkItem(event) {
+                event.preventDefault();
+                $(this).parent().toggleClass('done');
+            }
+
+            function completeItem(event) {
+                event.preventDefault();
+                $(this).parent().toggleClass('done');
+                $(this).parent().find('.checkItem').hide();
+            }
+        })
+    });
+</script>
 </body>
 </html>

@@ -6,17 +6,38 @@
         <div class="row">
             <div class="col-sm-12">
                 <h1>{{ project.title }}</h1>
-
-
                 {% if project.photo %}
                     {#                <img src="/media/{{ project.photo }}" style="max-width: 100%" />#}
                     <img src="{{ project.photo.url }}" style="max-width: 100%" />
-{#                   {% thumbnail "200x100" project.photo -- style="" onclick="" class=""%}#}
+
+                    {#                    {% thumbnail "200x100" project.photo -- style="" onclick="" class=""%}#}
+
                 {%  endif %}
 
                 {{ project.content|linebreaks }}
-
                 <hr/>
+                <h2>to-do리스트</h2>
+                <form class="form-horizontal">
+                    <div class="form-group">
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" id="newTodo" placeholder="할일">
+                        </div>
+                        <button type="button" id="addItem" class="btn btn-success">추가</button>
+                    </div>
+                </form>
+                {{ project.content_set.all }}
+                <ul id="todos">
+                    {% for todo in project.todo_set.all %}
+                        {#                        <li>#}
+                        {#                            {{ todo.todo }}#}
+                        {#                            <small> {{ todo.completed}}</small>#}
+                        {#                            <small>at {{ todo.create_at}}</small>#}
+                        {#                            <small>at {{ todo.updated_at }}</small>#}
+                        {#                        </li>#}
+                    {% endfor %}
+                </ul>
+                <hr/>
+
                 <h2>댓글</h2>
                 {{ project.content_set.all }}
                 <ul>
@@ -28,25 +49,11 @@
                         </li>
                     {% endfor %}
                 </ul>
-
-                <hr/>
-                <h2>to-do리스트</h2>
-                {{ project.content_set.all }}
-                <ul>
-                    {% for todo in project.todo_set.all %}
-                        <li>
-                            {{ todo.todo }}
-                            <small> {{ todo.completed}}</small>
-                            <small>at {{ todo.create_at}}</small>
-                            <small>at {{ todo.updated_at }}</small>
-                        </li>
-                    {% endfor %}
-                </ul>
-
                 <a href="{% url "home:project_list" %}" class="btn btn-primary">글 목록</a>
                 <a href="{% url "home:project_like" project.id %}" class="btn btn-primary">like!</a> <p>like:{{ project.like }}</p>
             </div>
         </div>
     </div>
+
 
 {%  endblock %}

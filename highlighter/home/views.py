@@ -55,7 +55,6 @@ def project_list(request):
     qs = Project.objects.all()
 
 
-
     q = request.GET.get('q','')
     if q:
         qs = qs.filter(title__icontains=q)
@@ -63,6 +62,7 @@ def project_list(request):
     return render(request, 'home/project_list.html', {
         'project_list':qs,
         'q':q,
+
     })
 
 def project_detail(request,id):

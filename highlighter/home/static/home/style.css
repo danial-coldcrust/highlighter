@@ -1,4 +1,40 @@
-/** hoem/static/home/style.css **/
-
-body {
+.done{
+    text-decoration: line-through;
+    opacity: 0.5;
 }
+
+#todos{
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+#todos li{
+    padding: 20px 0px 20px 0px;
+    border-bottom: 1px solid #ccc;
+}
+
+.deleteItem{
+    float :right;
+    color: #E06C75;
+    cursor: pointer;
+}
+
+.supportItem{
+    float :right;
+    color: #2aabd2;
+    cursor: pointer;
+
+}
+
+input[type=checkbox]{
+    margin-right: 15px;
+}
+
+.editText{
+    display: none;
+}
+.saveItem{
+    display: none;
+}
+

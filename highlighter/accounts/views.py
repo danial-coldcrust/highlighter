@@ -7,6 +7,7 @@ from allauth.socialaccount.templatetags.socialaccount import get_providers
 from .forms import SignupForm,LoginForm
 from ipware.ip import get_ip
 from django.contrib.gis.geoip2 import GeoIP2
+
 def signup(request):
     if request.method == 'POST':
         form = SignupForm(request.POST)
@@ -43,7 +44,7 @@ def login(request):
         print(g.city('218.85.133.23'))
     else:
         print('local or no ip')
-        
+
 
     return auth_login(request,
                       authentication_form=LoginForm,
