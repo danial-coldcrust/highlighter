@@ -5,7 +5,8 @@ from django.shortcuts import redirect,render
 from allauth.socialaccount.models import SocialApp
 from allauth.socialaccount.templatetags.socialaccount import get_providers
 from .forms import SignupForm,LoginForm
-
+from ipware.ip import get_ip
+from django.contrib.gis.geoip2 import GeoIP2
 def signup(request):
     if request.method == 'POST':
         form = SignupForm(request.POST)
@@ -34,8 +35,18 @@ def login(request):
             provider.social_app = None
         providers.append(provider)
 
+    ip = get_ip(request)
+    g = GeoIP2()
+    print(ip)
+    if ip is not None and ip is '127.0.0.1':
+
+        print(g.city('218.85.133.23'))
+    else:
+        print('local or no ip')
+        
 
     return auth_login(request,
                       authentication_form=LoginForm,
                       template_name='accounts/login_form.html',
                       extra_context={'providers': providers})
+
