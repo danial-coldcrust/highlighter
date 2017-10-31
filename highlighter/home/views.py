@@ -10,6 +10,9 @@ from .forms import ProjectForm
 import math, random
 from collections import defaultdict, Counter
 
+from haystack.query import SearchQuerySet
+
+
 
 def project_new(request):
     if request.method == 'POST':
@@ -55,13 +58,18 @@ def project_list(request):
     qs = Project.objects.all()
 
 
-    q = request.GET.get('q','')
-    if q:
+    a = request.GET.get('a','')
+    fq = request.GET.get('q', '')
+    if a:
         qs = qs.filter(title__icontains=q)
+    if fq:
+        results = SearchQuerySet().models(Project).filter(content=fq)
+        for t in results:
+            print(t.text)
 
     return render(request, 'home/project_list.html', {
         'project_list':qs,
-        'q':q,
+        'q':a,
 
     })
 
