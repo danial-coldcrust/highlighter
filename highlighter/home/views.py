@@ -61,16 +61,16 @@ def project_list(request):
     a = request.GET.get('a','')
     fq = request.GET.get('q', '')
     if a:
-        qs = qs.filter(title__icontains=q)
+        qs = qs.filter(title__icontains=a)
     if fq:
         results = SearchQuerySet().models(Project).filter(content=fq)
         for t in results:
             print(t.text)
 
+
     return render(request, 'home/project_list.html', {
         'project_list':qs,
         'q':a,
-
     })
 
 def project_detail(request,id):
