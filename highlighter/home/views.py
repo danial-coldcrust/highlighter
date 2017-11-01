@@ -22,7 +22,7 @@ def project_new(request):
             project = form.save()
             messages.success(request,' 새 포스팅을 저장했다습니다')
 
-            return redirect('/home/')
+            return redirect('/homee/')
         else:
             form.errors
 
@@ -30,7 +30,7 @@ def project_new(request):
         form = ProjectForm()
         #처음에열릴때
 
-    return render(request,'home/project_form.html',{
+    return render(request,'homee/project_form.html',{
         'form': form,
     })
 
@@ -42,7 +42,7 @@ def project_edit(request, id):
             project = Project()
             project = form.save()
 
-            return redirect('/home/')
+            return redirect('/homee/')
         else:
             form.errors
 
@@ -50,7 +50,7 @@ def project_edit(request, id):
         form = ProjectForm(instance=project) #project_new에인스턴스추가만하면 수정기능 끝
         #처음에열릴때
 
-    return render(request,'home/project_form.html',{
+    return render(request,'homee/project_form.html',{
         'form': form,
     })
 
@@ -62,14 +62,17 @@ def project_list(request):
     fq = request.GET.get('q', '')
     if a:
         qs = qs.filter(title__icontains=a)
+        print(qs)
     if fq:
-        results = SearchQuerySet().models(Project).filter(content=fq)
-        for t in results:
+        sqs = SearchQuerySet().models(Project).filter(content=fq)
+        print(sqs)
+        for t in sqs:
             print(t.text)
 
 
-    return render(request, 'home/project_list.html', {
+    return render(request, 'homee/project_list.html', {
         'project_list':qs,
+        # 'project_list_full':sqs,
         'q':a,
     })
 
@@ -80,7 +83,7 @@ def project_detail(request,id):
     #     raise  Http404
 
     project = get_object_or_404(Project, id=id)
-    return render(request, 'home/project_detail.html', {
+    return render(request, 'homee/project_detail.html', {
         'project' : project
     })
 
@@ -113,7 +116,7 @@ def project_like(request,id):
         profile.array_rated_project_indexs += (str(project.id)+',')
         profile.save()
 
-    return redirect('/home/'+id)
+    return redirect('/homee/'+id)
 
 def project_rcmd(request):
     login_user = request.user
@@ -124,7 +127,7 @@ def project_rcmd(request):
     users = User.objects.all()
 
     login_user_rated_list = login_user_rated_list_field.split(',')[0:-1]
-    print(login_user_rated_list)
+    #print(login_user_rated_list)
     users_interests = []
     login_user_id = None
 
@@ -141,17 +144,20 @@ def project_rcmd(request):
     #         users_interests.append(users_profile_rated)
 
     for user in users:
-        print(user.id,user)
+        #print(user.id,user) # FIXME: user and profile is important
         profile = get_object_or_404(Profile,user_id=user.id)
         users_profile_rated = profile.array_rated_project_indexs.split(',')[0:-1]
         users_interests.append(users_profile_rated)
+
+
+
 
     for cnt in range(len(users_interests)):
         if login_user_rated_list == users_interests[cnt]:
             login_user_id = cnt
             print(cnt)
 
-    #print(users_interests)
+
     #print(login_user_id)
 
 
@@ -169,7 +175,7 @@ def project_rcmd(request):
     def make_user_interest_vector(user_interests):
         return [1 if interest in user_interests else 0 for interest in unique_interests]
 
-    # print("make_user_interest_vector:",make_user_interest_vector(users_interests[0]))
+    #print("make_user_interest_vector:",make_user_interest_vector(users_interests[0]))
     # print("make_user_interest_vector:",make_user_interest_vector(users_interests[1]))
 
 
@@ -180,16 +186,13 @@ def project_rcmd(request):
     interest_user_matrix = [[user_interest_vector[j]
                              for user_interest_vector in user_interest_matrix]
                             for j, _ in enumerate(unique_interests)]
-    ##print(interest_user_matrix)
+    #print(interest_user_matrix)
 
     interest_similarities = [[cosine_similarity(user_vector_i, user_vector_j)
                               for user_vector_j in interest_user_matrix]
                              for user_vector_i in interest_user_matrix]
 
     #print(interest_similarities)
-
-
-
 
 
 
@@ -225,11 +228,17 @@ def project_rcmd(request):
                     for suggestion, weight in suggestions
                     if suggestion not in users_interests[user_id]]
 
-    #print("item_based_suggestions",item_based_suggestions(login_user_id))
+    print("item_based_suggestions",item_based_suggestions(login_user_id))
 
-    #render with project_list
-    #project = get_object_or_404(Project, id=login_user_id)
 
-    return render(request, 'home/project_rcmd.html',{
-        'item_based_suggestions': item_based_suggestions(login_user_id)
+    int_list = []
+    for t in map(int, item_based_suggestions(login_user_id)):
+        int_list.append(t)
+
+
+    qs = Project.objects.filter(id__in=int_list)
+
+
+    return render(request, 'homee/project_rcmd.html', {
+        'project_list': qs
     })

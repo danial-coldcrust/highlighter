@@ -1,0 +1,35 @@
+{% extends "homee/layout.html" %}
+{% load imagekit %}
+{% load bootstrap3 %}
+{% block content %}
+
+<table class="table table-hover table-bordered">
+
+                    <tbody>
+
+                    {% for project in project_list%}
+                        <tr>
+                            <div class="col-sm-6 col-md-3">
+                                <div class="thumbnail">
+                                    {% if project.photo %}
+                                        {% thumbnail "200x100" project.photo -- style="" onclick="" class=""%}
+                                    {%  endif %}
+                                    <div class="caption">
+                                        <a href="{% url "home:project_detail" project.id %}">
+                                            {{ project.title }}
+                                        </a>
+
+                                    </div>
+                                    <div class="caption">
+                                        <a>{{ project.user }}</a>
+                                        {{ project.created_at }}
+                                    </div>
+
+                                </div>
+                            </div>
+                        </tr>
+                    {% endfor %}
+                    </tbody>
+                </table>
+
+{% endblock %}
