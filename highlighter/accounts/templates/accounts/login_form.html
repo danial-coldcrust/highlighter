@@ -109,24 +109,14 @@
     <div class="omb_login">
         <h3 class="omb_authTitle">Login or <a href="{% url "signup" %}">Sign up</a></h3>
         <div class="row omb_row-sm-offset-3 omb_socialButtons">
-            <div class="col-xs-4 col-sm-2">
-                <a href="#" class="btn btn-lg btn-block omb_btn-facebook">
-                    <i class="fa fa-facebook visible-xs"></i>
-                    <span class="hidden-xs">Facebook</span>
-                </a>
-            </div>
-            <div class="col-xs-4 col-sm-2">
-                <a href="#" class="btn btn-lg btn-block omb_btn-kakao">
-                    <i class="fa fa-kakao visible-xs"></i>
-                    <span class="hidden-xs">Kakao</span>
-                </a>
-            </div>
-            <div class="col-xs-4 col-sm-2">
-                <a href="#" class="btn btn-lg btn-block omb_btn-naver">
-                    <i class="fa fa-naver-plus visible-xs"></i>
-                    <span class="hidden-xs">Naver</span>
-                </a>
-            </div>
+            {% for provider in providers %}
+                <div class="col-xs-4 col-sm-2">
+                    <a href="{% provider_login_url provider.id %}" class="btn btn-lg btn-block omb_btn-{{ provider.name }}">
+                        <i class="fa fa-facebook visible-xs"></i>
+                        <span class="hidden-xs">{{ provider.name }}</span>
+                    </a>
+                </div>
+            {% endfor %}
         </div>
 
         <div class="row omb_row-sm-offset-3 omb_loginOr">
@@ -161,18 +151,3 @@
 <form>
 
 </form>
-<ul>
-    {% for provider in providers %}
-        <li>
-            {% if provider.social_app %}
-                <a href="{% provider_login_url provider.id %}">
-                    {{ provider.name }}
-                </a>
-            {% else %}
-                <a>
-                    Provider {{ provider.name }} 설정이 필요합니다.
-                </a>
-            {% endif %}
-        </li>
-    {% endfor %}
-</ul>

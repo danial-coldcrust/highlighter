@@ -59,3 +59,11 @@ class Tag(models.Model):
     name = models.CharField(max_length=50,unique=True) #태그는중복되면안되니깐
     def __str__(self):
         return self.name
+
+class Post(models.Model):
+    title = models.CharField(max_length=30)
+    content = models.TextField()
+    read = models.IntegerField(default=0)
+    likes = models.IntegerField(default=0)
+    updated_date = models.DateTimeField(auto_now_add=False, auto_now=True)
+    created_date = models.DateTimeField(auto_now_add=True, auto_now=False)

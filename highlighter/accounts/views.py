@@ -13,14 +13,14 @@ def signup(request):
         form = SignupForm(request.POST)
         if form.is_valid():
             user = form.save()
-            return redirect(settings.LOGIN_URL) #default : "/accounts/login/"
+            return redirect(settings.LOGIN_URL) #default : "/accounts/login/" why?..
     else:
         form = SignupForm()
     return render(request, 'accounts/signup_form.html', {
         'form': form,
     })
 
-@login_required
+@login_required # when you login
 def profile(request):
     return render(request, 'accounts/profile.html')
 
@@ -36,18 +36,18 @@ def login(request):
             provider.social_app = None
         providers.append(provider)
 
-    ip = get_ip(request)
-    g = GeoIP2()
-    print(ip)
-    if ip is not None and ip is '127.0.0.1':
+    # ip = get_ip(request)
+    # g = GeoIP2()
+    # print(ip)
+    # if ip is not None and ip is '127.0.0.1':
+    #
+    #     print(g.city('218.85.133.23'))
+    # else:
+    #     print('local or no ip')
 
-        print(g.city('218.85.133.23'))
-    else:
-        print('local or no ip')
 
 
     return auth_login(request,
                       authentication_form=LoginForm,
                       template_name='accounts/login_form.html',
                       extra_context={'providers': providers})
-

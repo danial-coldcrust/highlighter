@@ -50,10 +50,10 @@
                     <li><a>도움말</a></li>
                     <li><a href="{% url "signup" %}">회원가입</a></li>
                     {#                        next is current page and request. is context_processor#}
-                    <li><a href="{% url "login" %}?next={{ request.path }}">로그인</a></li>
+                    <li><a href="{% url "login" %}">로그인</a></li>
                 {% else %}
                     <li><a>도움말</a></li>
-                    <li><a href="{% url "home:project_new" %}"}>새글쓰기</a></li>
+                    <li><a href="{% url "home:project_new" %}">새글쓰기</a></li>
                     <li><a href="{% url "profile" %}">프로필</a></li>
                     <li><a href="{% url "logout" %}?next={{ request.path }}">로그아웃</a></li>
                 {% endif %}
@@ -63,7 +63,7 @@
 </nav>
 <div class="container-fluid">
     <div class="row">
-        <div class="col-sm-4 col-md-3 col-lg-2 sidebar">
+        <div class="col-sm-3 col-md-2 col-lg-2 sidebar">
             <ul class="nav nav-sidebar">
                 <li>
                     <a href="#">HOME</a>
@@ -115,7 +115,7 @@
             </ul>
 
         </div>
-        <div class="col-sm-8 col-sm-offset-4 col-md-9 col-md-offset-3 col-lg-10 col-lg-offset-2 main">
+        <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 col-lg-10 col-lg-offset-2 main">
             {% if messages %}
                 <div class="alert alert-{{ message.tags }}">
                     {% for message in messages %}
@@ -227,5 +227,6 @@
         })
     });
 </script>
+
 </body>
 </html>

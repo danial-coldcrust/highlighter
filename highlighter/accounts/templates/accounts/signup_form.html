@@ -84,32 +84,33 @@
                     {% csrf_token %}
                     <div class="input-group">
                         <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-                        <input type="text" class="form-control" maxlength="50" placeholder="Username" name="{{ form.username}}">
+                        <input type="text" class="form-control" maxlength="50" placeholder="Username" name={{ form.username.html_name }}>
+
                     </div>
                     <span class="help-block"></span>
                     <div class="input-group">
                         <span class="input-group-addon"><i class="glyphicon glyphicon-envelope"></i></span>
-                        <input type="text" class="form-control" maxlength="50" placeholder="Email" name="{{ form.email }}">
+                        <input type="text" class="form-control" maxlength="50" placeholder="Email" name={{ form.email.html_name }}>
                     </div>
                     <span class="help-block"></span>
                     <div class="input-group">
                         <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
-                        <input type="password" class="form-control" maxlength="50" placeholder="Password" name="{{ form.password1 }}">
+                        <input type="password" class="form-control" maxlength="50" placeholder="Password" name={{ form.password1.html_name}}>
                     </div>
                     <span class="help-block"></span>
                     <div class="input-group">
                         <span class="input-group-addon"><i class="glyphicon glyphicon-warning-sign"></i></span>
-                        <input type="text" class="form-control" maxlength="50" placeholder="Password Confirmation" name="{{ form.password2 }}">
+                        <input type="password" class="form-control" maxlength="50" placeholder="Password Confirmation" name="{{ form.password2.html_name }}">
                     </div>
                     <span class="help-block"></span>
                     <div class="input-group">
                         <span class="input-group-addon"><i class="glyphicon glyphicon-phone"></i></span>
-                        <input type="text" class="form-control" maxlength="50" placeholder="Phone Number" name="{{ form.phone_number }}">
+                        <input type="text" class="form-control" maxlength="50" placeholder="Phone Number" name="{{ form.phone_number.html_name }}">
                     </div>
                     <span class="help-block"></span>
                     <div class="input-group">
                         <span class="input-group-addon"><i class="glyphicon glyphicon-home"></i></span>
-                        <input type="text" class="form-control" maxlength="50" placeholder="Address" name="{{ form.address }}">
+                        <input type="text" class="form-control" maxlength="50" placeholder="Address" name="{{ form.address.html_name }}">
                     </div>
                     <hr>
                     <button class="btn btn-lg btn-primary btn-block" type="submit">Sign up</button>
@@ -119,12 +120,13 @@
     </div>
 </div>
 
-
-<form action="" method="post">
-    {% csrf_token %}
-    <table>
-        {{ form.as_table }}
-
-    </table>
-    <input type="submit" />
-</form>
+{#ORIGINAL#}
+{##}
+{#<form action="" method="post">#}
+{#    {% csrf_token %}#}
+{#    <table>#}
+{#        {{ form.as_table }}#}
+{##}
+{#    </table>#}
+{#    <input type="submit" />#}
+{#</form>#}
