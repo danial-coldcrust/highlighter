@@ -37,4 +37,15 @@ input[type=checkbox]{
 .saveItem{
     display: none;
 }
+ .data
+ {
+    width:auto;
 
+    max-width:198px;
+
+    overflow: hidden;
+
+    white-space: nowrap;
+
+    text-overflow: ellipsis;
+ }

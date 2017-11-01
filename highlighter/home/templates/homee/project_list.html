@@ -3,92 +3,76 @@
 {% load bootstrap3 %}
 {% block content %}
 
-    <div class="container">
-        <div class="jumbotron">
-            <h1>HighLighter Project <sup>by coldcrust</sup></h1>
-            <p>여러분의 자기관리 페이스메이커가 되어드리겠습니다.</p>
-            <h2>
-                <a class="btn btn-lg btn-primary" href="{% url "home:project_rcmd" %}">
-                    내 스터디 추천받기^^
-                </a>
-            </h2>
-        </div>
+    <div class="jumbotron">
+        <h1>HighLighter Project <sup>by coldcrust</sup></h1>
+        <p>여러분의 자기관리 페이스메이커가 되어드리겠습니다.</p>
+        <h2>
+            <a class="btn btn-lg btn-primary" href="{% url "home:project_rcmd" %}">
+                내 스터디 추천받기^^
+            </a>
+        </h2>
+    </div>
 
-        <div class="row">
-            <div class="col-sm-12">
-                <div class ="alert alert-info">
-                    <ul>
-                        <li>
-                            http://localhost:8000/home 주소로 접속.
-                        </li>
-                        <li>
-                            빨리졸업하고싶다.졸업하고 편의점알바하면서 살아야지.
-                        </li>
-                    </ul>
-                </div>
-
-                <a href="{% url "home:project_new" %}" class="btn btn-primary pull-right">새글 쓰기</a>
-
-                <p>
-                <form action="" method="get">
-                    <input type="text" name="a" value="{{ q }}" />
-                    <input type="submit" value="검색" class = "btn btn-primary"/>
-                </form>
-                <form action="" method="get">
-                    <input type="text" name="q" value="{{ fq }}" />
-                    <input type="submit" value="full-text검색" class = "btn btn-primary"/>
-                </form>
-                </p>
-                <table class="table table-hover table-bordered">
-
-                    <tbody>
-
-
-                    {% for project in project_list%}
-                        <tr>
-                            <div class="col-sm-6 col-md-3">
-                                <div class="thumbnail">
-                                    {% if project.photo %}
-                                        {% thumbnail "200x100" project.photo -- style="" onclick="" class=""%}
-                                    {%  endif %}
-                                    <div class="caption">
-                                        <a href="{% url "home:project_detail" project.id %}">
-                                            {{ project.title }}
-                                        </a>
-
-                                    </div>
-                                    <div class="caption">
-                                        <a>{{ project.user }}</a>
-                                        {{ project.created_at }}
-                                    </div>
+    <div class="row">
+        <div class="col-sm-12">
+            {#                <div class ="alert alert-info">#}
+            {#                    <ul>#}
+            {#                        <li>#}
+            {#                            http://localhost:8000/home 주소로 접속.#}
+            {#                        </li>#}
+            {#                        <li>#}
+            {#                            빨리졸업하고싶다.졸업하고 편의점알바하면서 살아야지.#}
+            {#                        </li>#}
+            {#                    </ul>#}
+            {#                </div>#}
+        <h3>프로젝트목록</h3>
+            <table class="table table-hover table-bordered">
+                <tbody>
+                {% for project in project_list%}
+                    <tr>
+                        <div class="col-sm-6 col-md-2">
+                            <div class="thumbnail">
+                                {% if project.photo %}
+                                    {% thumbnail "200x100" project.photo -- style="" onclick="" class=""%}
+                                {%  endif %}
+                                <div class="caption data">
+                                    <a href="{% url "home:project_detail" project.id %}">
+                                        {{ project.title }}
+                                    </a>
 
                                 </div>
+                                <div class="caption">
+                                    <a>{{ project.user }}</a><br>
+                                    {{ project.created_at }}
+                                </div>
+
                             </div>
+                        </div>
 
-                            {#                            <td>{{ project.id }}</td>#}
-                            {##}
-                            {#                            <td>#}
-                            {#                                {% if project.photo %}#}
-                            {#                                    {% thumbnail "200x100" project.photo -- style="" onclick="" class=""%}#}
-                            {#                                {%  endif %}#}
-                            {#                            </td>#}
-                            {##}
-                            {#                            <td>#}
-                            {#                                <a href="{% url "home:project_detail" project.id %}">#}
-                            {#                                    {{ project.title }}#}
-                            {#                                </a>#}
-                            {#                            </td>#}
+                        {#                            <td>{{ project.id }}</td>#}
+                        {##}
+                        {#                            <td>#}
+                        {#                                {% if project.photo %}#}
+                        {#                                    {% thumbnail "200x100" project.photo -- style="" onclick="" class=""%}#}
+                        {#                                {%  endif %}#}
+                        {#                            </td>#}
+                        {##}
+                        {#                            <td>#}
+                        {#                                <a href="{% url "home:project_detail" project.id %}">#}
+                        {#                                    {{ project.title }}#}
+                        {#                                </a>#}
+                        {#                            </td>#}
 
-                            {#                <a href="/home/{{ project.id }}">#}
-                            {#                    {{ project.title }}#}
-                            {#                </a></li>#}
-                            {#                            <td><small>{{ project.author }}</small></td>#}
-                            {#                            <td><small>{{ project.updated_at}}</small></td>#}
-                        </tr>
-                    {% endfor %}
-                    </tbody>
-                </table>
-            </div>
+                        {#                <a href="/home/{{ project.id }}">#}
+                        {#                    {{ project.title }}#}
+                        {#                </a></li>#}
+                        {#                            <td><small>{{ project.author }}</small></td>#}
+                        {#                            <td><small>{{ project.updated_at}}</small></td>#}
+                    </tr>
+                {% endfor %}
+                </tbody>
+            </table>
         </div>
     </div>
+
 {% endblock %}
