@@ -19,7 +19,7 @@
 </head>
 
 <body>
-<nav class="navbar navbar-default navbar">
+<nav class="navbar navbar-inverse navbar-fixed-top">
     <div class="container-fluid">
         <div class="navbar-header col-md-2">
             <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar">
@@ -61,60 +61,61 @@
         </div>
     </div>
 </nav>
-<div class="con container-fluid">
+<div class="container-fluid">
     <div class="row">
         <div class="col-sm-4 col-md-3 col-lg-2 sidebar">
             <ul class="nav nav-sidebar">
                 <li>
                     <a href="#">HOME</a>
                 </li>
-                <ul class="nav nav-sidebar">
-                    <li>
-                        <a href="#">PROJECT</a>
-                    </li>
-                </ul>
-                <ul class="nav nav-sidebar">
-                    <li>
-                        <a href="#">STUDY</a>
-                    </li>
-                </ul>
-                <hr/>
-                <ul class="nav nav-sidebar">
-                    <li>
-                        <a >
-                            인기프로젝트
-                        </a>
-                    </li>
-                    <a href="" ><li>토익 900점 도전 프로젝트</li></a>
-                    <li> 추성훈처럼 몸짱 도전</li>
-                    <li>월 30만원씩 적금</li>
-                    <div class="collapse" id="collapsePro">
-                        <li><a>낑깡</a></li>
-                        <li><a>낑깡</a></li>
-                        <li><a>낑깡</a></li>
-                    </div>
-                    <li><a href="#collapsePro" data-toggle="collapse" aria-expanded="false" aria-controls="collapsePro">더보기<span class="caret"></span></a></li>
-                </ul>
-                <hr/>
-                <ul class="nav nav-sidebar">
-                    <li>
-                        <a>
-                            인기스터디
-                        </a>
-                    </li>
-                    <li>tofle 900</li>
-                    <a href="" ><li>9급 공무원 합격 기원 스터디</li></a>
-                    <li>7급 공무원 합격 기원 스터디</li>
-                    <div class="collapse" id="collapseStu">
-                        <li><a>낑</a></li>
-                        <li><a>낑</a></li>
-                        <li><a>낑</a></li>
-                    </div>
-                    <li><a href="#collapseStu" data-toggle="collapse" aria-expanded="false" aria-controls="collapseStu">더보기<span class="caret"></span></a></li>
-                </ul>
             </ul>
+            <ul class="nav nav-sidebar">
+                <li>
+                    <a href="#">PROJECT</a>
+                </li>
+            </ul>
+            <ul class="nav nav-sidebar">
+                <li>
+                    <a href="#">STUDY</a>
+                </li>
+            </ul>
+            <hr/>
+            <ul class="nav nav-sidebar">
+                <li>
+                    <a >
+                        인기프로젝트
+                    </a>
+                </li>
+                <a href="" ><li>토익 900점 도전 프로젝트</li></a>
+                <li> 추성훈처럼 몸짱 도전</li>
+                <li>월 30만원씩 적금</li>
+                <div class="collapse" id="collapsePro">
+                    <li><a>낑깡</a></li>
+                    <li><a>낑깡</a></li>
+                    <li><a>낑깡</a></li>
+                </div>
+                <li><a href="#collapsePro" data-toggle="collapse" aria-expanded="false" aria-controls="collapsePro">더보기<span class="caret"></span></a></li>
+            </ul>
+            <hr/>
+            <ul class="nav nav-sidebar">
+                <li>
+                    <a>
+                        인기스터디
+                    </a>
+                </li>
+                <li>tofle 900</li>
+                <a href="" ><li>9급 공무원 합격 기원 스터디</li></a>
+                <li>7급 공무원 합격 기원 스터디</li>
+                <div class="collapse" id="collapseStu">
+                    <li><a>낑</a></li>
+                    <li><a>낑</a></li>
+                    <li><a>낑</a></li>
+                </div>
+                <li><a href="#collapseStu" data-toggle="collapse" aria-expanded="false" aria-controls="collapseStu">더보기<span class="caret"></span></a></li>
+            </ul>
+
         </div>
-        <div class="col-sm-8 col-md-9 col-lg-10 main">
+        <div class="col-sm-8 col-sm-offset-4 col-md-9 col-md-offset-3 col-lg-10 col-lg-offset-2 main">
             {% if messages %}
                 <div class="alert alert-{{ message.tags }}">
                     {% for message in messages %}
@@ -128,7 +129,7 @@
         </div>
 
         <div id="page-footer">
-            <div class="container">
+            <div class="container navbar-fixed-bottom">
                 <p class="text-muted">
                     &copy; ColdCrusg
                     피자한판드세요
