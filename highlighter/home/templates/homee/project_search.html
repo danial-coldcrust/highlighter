@@ -1,4 +1,6 @@
 {%  load static %}
+{% load imagekit %}
+{% load bootstrap3 %}
 <!doctype html>
 <html>
 <head>
@@ -44,9 +46,9 @@
                     </div>
                 </form>
 
-                <form class="form-horizontal" action="search/" method="get">
+                <form class="form-horizontal" action="" method="get">
                     <div class="col-xs-6">
-                        <input type="text" name="keyword" value="{{ fq }}" />
+                        <input type="text" id="dam" name="keyword" value="{{ fq }}" />
                         <input type="submit" value="FTS" class = "btn btn-primary"/>
                     </div>
                 </form>
@@ -68,6 +70,8 @@
         </div>
     </div>
 </nav>
+
+
 <div class="container-fluid">
     <div class="row">
         <div class="col-sm-3 col-md-2 col-lg-2 sidebar">
@@ -122,6 +126,8 @@
             </ul>
 
         </div>
+
+
         <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 col-lg-10 col-lg-offset-2 main">
             {% if messages %}
                 <div class="alert alert-{{ message.tags }}">
@@ -131,9 +137,31 @@
                     {% endfor %}
                 </div>
             {% endif %}
-            {% block content %}
-            {% endblock %}
+
+
+
+
+            <div class="row">
+                <div class="col-sm-12">
+
+                    <h3>전문검색 검색결과: </h3>
+                    <h2>혹시 이것을 찾으셨나요?
+
+                            <a href="#" id="dam_return">{{ suggested }}</a>
+
+                    </h2>
+                    {% for t in full_text %}
+                    <p>{{ t.title }}</p>
+
+                    {% endfor %}
+                </div>
+            </div>
+
+
         </div>
+
+
+
 
         <div id="page-footer">
             <div class="container navbar-fixed-bottom">
@@ -145,28 +173,6 @@
         </div>
     </div>
 </div>
-
-
-
-
-
-{#    <div class="container">#}
-{#        <div class="alert alert-info">#}
-{##}
-{#        </div>#}
-{##}
-{#        <div class="alert alert-success">#}
-{##}
-{#        </div>#}
-{##}
-{#        <div class="alert alert-danger">#}
-{##}
-{#        </div>#}
-{##}
-{#        <div class="alert alert-warning">#}
-{##}
-{#        </div>#}
-{#    </div>#}
 
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
@@ -233,8 +239,17 @@
             }
         })
     });
+
+    $(document).ready(function(){
+    $("#dam_return").click(function(){
+        var value = $(this).html();
+        var input = $('#dam');
+        input.val(value);
+    });
+});
+
 </script>
-<{% block extra_body %}
-{%  endblock %}
+
+
 </body>
 </html>

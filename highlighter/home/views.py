@@ -10,6 +10,8 @@ from .forms import ProjectForm
 import math, random
 from collections import defaultdict, Counter
 
+import json
+from django.http import HttpResponse
 from haystack.query import SearchQuerySet
 
 
@@ -59,15 +61,10 @@ def project_list(request):
 
 
     a = request.GET.get('a','')
-    fq = request.GET.get('q', '')
+
     if a:
         qs = qs.filter(title__icontains=a)
         print(qs)
-    if fq:
-        sqs = SearchQuerySet().models(Project).filter(content=fq)
-        print(sqs)
-        for t in sqs:
-            print(t.text)
 
 
     return render(request, 'homee/project_list.html', {
@@ -75,6 +72,10 @@ def project_list(request):
         # 'project_list_full':sqs,
         'q':a,
     })
+
+
+
+
 
 def project_detail(request,id):
     # try:
@@ -241,4 +242,29 @@ def project_rcmd(request):
 
     return render(request, 'homee/project_rcmd.html', {
         'project_list': qs
+    })
+
+
+def project_search(request):
+    keyword_query = request.GET.get('keyword', '')
+    full_text =''
+    suggested =''
+
+    if keyword_query:
+        global suggested
+        full_text = SearchQuerySet().models(Project).filter(content=keyword_query)
+        suggested = SearchQuerySet().spelling_suggestion(keyword_query)
+
+        print(suggested )
+        # auto = SearchQuerySet().autocomplete(title_auto=keyword_query)
+        # print([result.title for result in auto])
+        # suggestions =
+        # data = json.dumps({
+        #     'results': suggestions
+        # })
+
+    return render(request, 'homee/project_search.html', {
+        'keyword_query' : keyword_query,
+        'suggested' : suggested,
+        'full_text' : full_text,
     })

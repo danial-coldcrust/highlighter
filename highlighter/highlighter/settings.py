@@ -54,6 +54,7 @@ INSTALLED_APPS = [
     'home',
 
     'haystack',
+    'rest_framework',
 
 ]
 

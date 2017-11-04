@@ -3,6 +3,7 @@ from django.conf import settings
 from django import forms
 from imagekit.models import ImageSpecField
 from imagekit.processors import Thumbnail
+from django.urls import reverse
 
 
 def min_length_3_validator(value):
@@ -31,9 +32,11 @@ class Project(models.Model):
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
 
-
     def __str__(self):
         return self.title
+
+
+
 
 class Comment(models.Model):
     project = models.ForeignKey(Project)

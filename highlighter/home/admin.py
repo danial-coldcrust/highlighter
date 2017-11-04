@@ -1,14 +1,11 @@
 from django.contrib import admin
 from .models import Project,Comment,Tag,Todo
 
-
-
 @admin.register(Project)
 class ProjectAdmin(admin.ModelAdmin):
     list_display = ['user','id','title','status','created_at','updated_at']
 
     #리스트값들이 내모델클래스의 필드와일치해야 함
-
 
     actions = ['make_published','make_drafted']
 
@@ -21,7 +18,6 @@ class ProjectAdmin(admin.ModelAdmin):
     def make_drafted(self, request, queryset):
         updated_count = queryset.update(status='d')
         self.message_user(request, '{}건의 프로젝트를드래프상태로 변경'.format(updated_count))
-
 
 @admin.register(Comment)
 class CommentAdmin(admin.ModelAdmin):
