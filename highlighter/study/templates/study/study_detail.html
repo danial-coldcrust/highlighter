@@ -1,46 +1,58 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>스터디 내용보가</title>
-</head>
-<body>
-<h1>{{ study.title }}</h1>
- {% for post in study.post_set.all%}
-        <h3>{{ post.user}}</h3>
-    {% endfor %}
+{%  extends "homee/layout.html" %}
+{%  load imagekit %}
 
-{{ study.content|linebreaks }}
-
-<hr/>
-<h2>공동목표todo-list</h2>
-
-<ul>
-    {% for todo in study.grouptodo_set.all %}
-        <li>
-            {{ todo.todo }}
-            <small> {{ todo.completed}}</small>
-            <small>at {{ todo.create_at}}</small>
-            <small>at {{ todo.updated_at }}</small>
-        </li>
-    {% endfor %}
-</ul>
+{% block content %}
 
 
-<hr/>
-<h2>스터디모임 게시판</h2>
-<ul>
-    {% for post in study.post_set.all%}
-        <li>
-            {{ post.id }}
-            <a href="/study/{{ post.id }}">
-                {{ post.title }}
-            </a></li>s
-        <small>{{ post.user}}</small>
-        <small>{{ post.updated_at }}</small>
-        </li>
-    {% endfor %}
-</ul>
-</body>
-</html>
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <h1>{{ study.title }}</h1>
+                {% for post in study.post_set.all%}
+                    <h3>{{ post.user}}</h3>
+                {% endfor %}
+                <a href="{% url "study:study_participate" study.id %}" class="btn btn-primary">part-in!</a>
+                {{ study.content|linebreaks }}
+
+                <hr/>
+
+                {% for t in study.user_set.all%}
+                    <h3>{{t}}</h3>
+                {% endfor %}
+                <hr/>
+                <h2>공동목표todo-list</h2>
+
+                <ul>
+                    {% for todo in study.grouptodo_set.all %}
+                        <li>
+                            {{ todo.todo }}
+                            <small> {{ todo.completed}}</small>
+                            <small>at {{ todo.create_at}}</small>
+                            <small>at {{ todo.updated_at }}</small>
+                        </li>
+                    {% endfor %}
+                </ul>
+
+                <hr/>
+                <h2>스터디모임 게시판</h2>
+                <ul>
+                    {% for post in study.post_set.all%}
+                        <li>
+                            {{ post.id }}
+                            <a href="/study/{{ post.id }}">
+                                {{ post.title }}
+                            </a>
+                        </li>
+                        <small>{{ post.user}}</small>
+                        <small>{{ post.updated_at }}</small>
+                        </li>
+                    {% endfor %}
+                </ul>
+            </div>
+
+        </div>
+    </div>
+
+{%  endblock %}
+
 

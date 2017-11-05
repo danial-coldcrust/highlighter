@@ -9,6 +9,7 @@ class Study(models.Model):
     content = models.TextField(verbose_name='설명')
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
+    user_set = models.ManyToManyField('accounts.Profile', blank=True)
 
     def __str__(self):
         return self.title

@@ -1,31 +1,36 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
-    씨발
-
-<form action="" method="get">
-    <input type="text" name="q" value="{{ q }}"/>
-    <input type="submit" value="검색" />
-
-
-</form>
-
-<ul>
-    {% for study in study_list%}
-        <li>
-            {{ study.id }}
-            <a href="/study/{{ study.id }}">
-                {{ study.title }}
-            </a></li>
-{#        <small>{{ study.user}}</small>#}
-
-        <small>{{ project.updated_at }}</small>
-        </li>
-    {% endfor %}
-</ul>
-</body>
-</html>
+{% extends "homee/layout.html" %}
+{% load imagekit %}
+{% load bootstrap3 %}
+{% block content %}
+    <div class="row">
+        <div class="col-sm-12">
+            <h3>Study목록</h3>
+            <table class="table table-hover table-bordered">
+                <tbody>
+                {% for study in study_list%}
+                    <tr>
+                        <div class="col-sm-6 col-md-2 sizess">
+                            <div class="thumbnail">
+                                <a href="/study/{{ study.id }}">
+                                    {% if project.photo %}
+                                        {% thumbnail "200x100" study.photo -- style="" onclick="" class=""%}
+                                    {%  endif %}
+                                </a>
+                                <h6>
+                                    <div class="mul_tum_data">
+                                        <a href="/study/{{ study.id }}">
+                                            {{ study.title }}
+                                        </a>
+                                    </div>
+                                </h6>
+                                <h6><a>{{ study.user }}</a></h6>
+                                <h6>{{ study.created_at }}</h6>
+                            </div>
+                        </div>
+                    </tr>
+                {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+{% endblock %}
