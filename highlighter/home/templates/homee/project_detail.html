@@ -6,6 +6,8 @@
         <div class="row">
             <div class="col-sm-12">
                 <h1>{{ project.title }}</h1>
+                <h6>like:{{ project.like }}</h6>
+                <a href="{% url "home:project_like" project.id %}" class="btn btn-primary">like!</a>
                 {% if project.photo %}
                     {#                <img src="/media/{{ project.photo }}" style="max-width: 100%" />#}
                     <img src="{{ project.photo.url }}" style="max-width: 100%" />
@@ -50,7 +52,7 @@
                     {% endfor %}
                 </ul>
                 <a href="{% url "home:project_list" %}" class="btn btn-primary">글 목록</a>
-                <a href="{% url "home:project_like" project.id %}" class="btn btn-primary">like!</a> <p>like:{{ project.like }}</p>
+
             </div>
         </div>
     </div>

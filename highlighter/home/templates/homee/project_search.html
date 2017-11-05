@@ -24,40 +24,49 @@
 </head>
 
 <body>
-<nav class="navbar navbar-inverse navbar-fixed-top">
-    <div class="container-fluid">
+<nav class="navbar navbar-default navbar-fixed-top">
+    <div class="container-fluid nav-search">
         <div class="navbar-header col-md-2">
             <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar">
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="{% url "root" %}">HighLighter<span class="glyphicon glyphicon-pencil"></span></a>
+            <a class="logo_text" href="{% url "root" %}">HighLighter<span class="glyphicon glyphicon-pencil"></span></a>
         </div>
         <div id="navbar" class="collapse navbar-collapse">
+            <div class="col-md-7 form-horizontal ">
+                <div class="col-lg-6">
+                    <form class="form-group " action="" method="get">
+                        <div class="has-error">
+                            <div class="col-md-9 input_size">
 
-            <div class="col-md-6 .col-md-offset-4">
-
-                <br>
-                <form class="form-horizontal" action="" method="get">
-                    <div class="col-xs-6">
-                        <input type="text" name="a" value="{{ q }}" />
-                        <button type="submit" class = "btn btn-primary"><span class="glyphicon glyphicon-search"></span></button>
-                    </div>
-                </form>
-
-                <form class="form-horizontal" action="" method="get">
-                    <div class="col-xs-6">
-                        <input type="text" id="dam" name="keyword" value="{{ fq }}" />
-                        <input type="submit" value="FTS" class = "btn btn-primary"/>
-                    </div>
-                </form>
+                                <input type="text" class="form-control" placeholder="기본검색" name="a" value="{{ q }}" />
+                            </div>
+                            <div class="col-md-2 button_size">
+                                <button type="submit" class="btn btn-primary"><span class="glyphicon glyphicon-search"></span></button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="col-lg-6">
+                    <form class="form-group" action="" method="get">
+                        <div class="has-error">
+                            <div class="col-md-9 input_size">
+                                <input type="text" id="dam" class="form-control" placeholder="Elasticsearch를 이용한 전문검색" name="keyword" value="{{ fq }}" />
+                            </div>
+                            <div class="col-md-2 button_size">
+                                <button type="submit" class="btn btn-primary" value="FTS" class = "btn btn-primary"><span class="glyphicon glyphicon glyphicon-zoom-in"></span></button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
             </div>
 
-            <ul class="nav navbar-nav navbar-right">
+            <ul class="nav nav-pills navbar-right">
                 {% if not user.is_authenticated %}
                     <li><a>도움말</a></li>
-                    <li><a href="{% url "signup" %}">회원가입</a></li>
+                    <li><a class="nav-link active" href="{% url "signup" %}">회원가입</a></li>
                     {#                        next is current page and request. is context_processor#}
                     <li><a href="{% url "login" %}">로그인</a></li>
                 {% else %}
@@ -127,7 +136,6 @@
 
         </div>
 
-
         <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 col-lg-10 col-lg-offset-2 main">
             {% if messages %}
                 <div class="alert alert-{{ message.tags }}">
@@ -138,117 +146,137 @@
                 </div>
             {% endif %}
 
-
-
-
-            <div class="row">
-                <div class="col-sm-12">
-
-                    <h3>전문검색 검색결과: </h3>
-                    <h2>혹시 이것을 찾으셨나요?
-
-                            <a href="#" id="dam_return">{{ suggested }}</a>
-
-                    </h2>
+            <h2>
+                혹시 이것을 찾으셨나요? <a href="#" id="dam_return">{{ suggested }}</a>
+            </h2>
+            <h3>전문검색 검색결과</h3>
+            <hr>
+            <div class="col-md-10 col-md-offset-1">
+                <table class="table table-hover table-bordered table-condensed">
+                    <tbody>
                     {% for t in full_text %}
-                    <p>{{ t.title }}</p>
+                        {% for project in project_list %}
+                            {% if t.title == project.title %}
+                                <tr>
+                                    <th width="200px">
+                                        <div class="thumbnail mystyle">
+                                            {% if project.photo %}
+                                                <a href="{% url "home:project_detail" project.id %}">
+                                                    {% thumbnail "200x120" project.photo -- style="" onclick="" class=""%}
+                                                </a>
+                                            {%  endif %}
+                                        </div>
+                                    </th>
+                                    <td>
+                                        <h4>
+                                            <div class="tum_data">
+                                                <a href="{% url "home:project_detail" project.id %}">
+                                                    {{ project.title }}
+                                                </a>
+                                            </div>
+                                        </h4>
+                                        <h6><a>{{ project.user }}</a></h6>
+                                        <h6>{{ project.created_at }}</h6>
+                                        <div class="mul_tum_data">
+                                            {{project.body }}
+                                        </div>
 
+                                    </td>
+                                </tr>
+                            {% endif %}
+                        {% endfor %}
                     {% endfor %}
-                </div>
+                    </tbody>
+                </table>
             </div>
 
 
-        </div>
-
-
-
-
-        <div id="page-footer">
-            <div class="container navbar-fixed-bottom">
-                <p class="text-muted">
-                    &copy; ColdCrust
-                    피자한판드세요
-                </p>
-            </div>
+            {#        <div id="page-footer">#}
+            {#            <div class="container navbar-fixed-bottom">#}
+            {#                <p class="text-muted">#}
+            {#                    &copy; ColdCrust#}
+            {#                    피자한판드세요#}
+            {#                </p>#}
+            {#            </div>#}
+            {#        </div>#}
         </div>
     </div>
-</div>
 
 
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
-<script>
-    $(function () {
-        $(document).ready(function () {
-            $('#addItem').on('click', addItem);
-            $('#todos').on('change', '.completeItem', completeItem);
-            $('#todos').on('click', '.checkItem', checkItem);
-            $('#todos').on('click', '.deleteItem', deleteItem);
-            $('#todos').on('click', '.todoText', startEditing);
-            $('#todos').on('click', '.saveItem', stopEditing);
-            $('#newTodo').on('keypress', function (event) {
-                if (event.which === 13) {
-                    addItem();
-                    event.preventDefault();
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+    <script>
+        $(function () {
+            $(document).ready(function () {
+                $('#addItem').on('click', addItem);
+                $('#todos').on('change', '.completeItem', completeItem);
+                $('#todos').on('click', '.checkItem', checkItem);
+                $('#todos').on('click', '.deleteItem', deleteItem);
+                $('#todos').on('click', '.todoText', startEditing);
+                $('#todos').on('click', '.saveItem', stopEditing);
+                $('#newTodo').on('keypress', function (event) {
+                    if (event.which === 13) {
+                        addItem();
+                        event.preventDefault();
+                    }
+                });
+
+                function startEditing(event) {
+                    var taskLi = $(this).parent();
+                    var currentText = taskLi.find('.todoText').text();
+                    taskLi.find('.editText').val(currentText);
+                    taskLi.find('.editText').show();
+                    taskLi.find('.saveItem').show();
+                    taskLi.find('.todoText').hide();
                 }
+
+                function stopEditing(event) {
+                    $(this).hide();
+                    var taskLi = $(this).parent();
+                    var newValue = taskLi.find('.editText').val();
+                    taskLi.find('.editText').hide();
+                    taskLi.find('.todoText').text(newValue);
+                    taskLi.find('.todoText').show();
+                }
+
+                function addItem(event) {
+                    var newTodoText = $('#newTodo').val();
+                    if (newTodoText === "")
+                        alert("할일을 입력하시오!");
+                    else
+                        $('#todos').append('<li><input class="completeItem" type="checkbox"><span class="todoText"> ' + newTodoText +
+                            '</span><input type="text" class="editText"><button class="btn btn-success saveItem">save</button>' +
+                            '<span class="glyphicon glyphicon-trash deleteItem"></span></li>');
+                    $('#newTodo').val("");
+                }
+
+                function deleteItem(event) {
+                    event.preventDefault();
+                    $(this).parent().remove();
+                }
+
+                function checkItem(event) {
+                    event.preventDefault();
+                    $(this).parent().toggleClass('done');
+                }
+
+                function completeItem(event) {
+                    event.preventDefault();
+                    $(this).parent().toggleClass('done');
+                    $(this).parent().find('.checkItem').hide();
+                }
+            })
+        });
+
+        $(document).ready(function(){
+            $("#dam_return").click(function(){
+                var value = $(this).html();
+                var input = $('#dam');
+                input.val(value);
             });
+        });
 
-            function startEditing(event) {
-                var taskLi = $(this).parent();
-                var currentText = taskLi.find('.todoText').text();
-                taskLi.find('.editText').val(currentText);
-                taskLi.find('.editText').show();
-                taskLi.find('.saveItem').show();
-                taskLi.find('.todoText').hide();
-            }
-
-            function stopEditing(event) {
-                $(this).hide();
-                var taskLi = $(this).parent();
-                var newValue = taskLi.find('.editText').val();
-                taskLi.find('.editText').hide();
-                taskLi.find('.todoText').text(newValue);
-                taskLi.find('.todoText').show();
-            }
-
-            function addItem(event) {
-                var newTodoText = $('#newTodo').val();
-                if (newTodoText === "")
-                    alert("할일을 입력하시오!");
-                else
-                    $('#todos').append('<li><input class="completeItem" type="checkbox"><span class="todoText"> ' + newTodoText +
-                        '</span><input type="text" class="editText"><button class="btn btn-success saveItem">save</button>' +
-                        '<span class="glyphicon glyphicon-trash deleteItem"></span></li>');
-                $('#newTodo').val("");
-            }
-
-            function deleteItem(event) {
-                event.preventDefault();
-                $(this).parent().remove();
-            }
-
-            function checkItem(event) {
-                event.preventDefault();
-                $(this).parent().toggleClass('done');
-            }
-
-            function completeItem(event) {
-                event.preventDefault();
-                $(this).parent().toggleClass('done');
-                $(this).parent().find('.checkItem').hide();
-            }
-        })
-    });
-
-    $(document).ready(function(){
-    $("#dam_return").click(function(){
-        var value = $(this).html();
-        var input = $('#dam');
-        input.val(value);
-    });
-});
-
-</script>
+    </script>
 
 
 </body>

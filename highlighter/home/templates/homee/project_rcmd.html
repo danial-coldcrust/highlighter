@@ -4,31 +4,52 @@
 {% block content %}
     <h3>추천된 프로젝트</h3>
     <table class="table table-hover table-bordered">
-
         <tbody>
         {% for project in project_list%}
             <tr>
                 <div class="col-sm-6 col-md-2 sizess">
                     <div class="thumbnail">
-                        {% if project.photo %}
-                            {% thumbnail "200x100" project.photo -- style="" onclick="" class=""%}
-                        {%  endif %}
-                        <div class="caption data">
-                            <a href="{% url "home:project_detail" project.id %}">
-                                {{ project.title }}
-                            </a>
-
-                        </div>
-                        <div class="caption">
-                            <a>{{ project.user }}</a><br>
-                            {{ project.created_at }}
-                        </div>
-
+                        <a href="{% url "home:project_detail" project.id %}">
+                            {% if project.photo %}
+                                {% thumbnail "200x100" project.photo -- style="" onclick="" class=""%}
+                            {%  endif %}
+                        </a>
+                        <h6>
+                            <div class="mul_tum_data">
+                                <a href="{% url "home:project_detail" project.id %}">
+                                    {{ project.title }}
+                                </a>
+                            </div>
+                        </h6>
+                        <h6><a>{{ project.user }}</a></h6>
+                        <h6>{{ project.created_at }}</h6>
                     </div>
                 </div>
             </tr>
         {% endfor %}
+        {% for t in indifferent %}
+            <div class="col-sm-6 col-md-2 sizess">
+                <div class="thumbnail">
+                    <a href="{% url "home:project_detail" t.id %}">
+                        {% if t.photo %}
+                            {% thumbnail "200x100" t.photo -- style="" onclick="" class=""%}
+                        {%  endif %}
+                    </a>
+                    <h6>
+                        <div class="mul_tum_data">
+                            <a href="{% url "home:project_detail" t.id %}">
+                                {{ t.title }}
+                            </a>
+                        </div>
+                    </h6>
+                    <h6><a>{{ t.user }}</a></h6>
+                    <h6>{{ t.created_at }}</h6>
+                </div>
+            </div>
+        {% endfor %}
+
         </tbody>
     </table>
+
 
 {% endblock %}

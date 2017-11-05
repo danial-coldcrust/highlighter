@@ -22,44 +22,53 @@
 </head>
 
 <body>
-<nav class="navbar navbar-inverse navbar-fixed-top">
-    <div class="container-fluid">
+<nav class="navbar navbar-default navbar-fixed-top">
+    <div class="container-fluid nav-search">
+        {#        <div class="row">#}
         <div class="navbar-header col-md-2">
             <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar">
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="{% url "root" %}">HighLighter<span class="glyphicon glyphicon-pencil"></span></a>
+            <a class="logo_text" href="{% url "root" %}">HighLighter<span class="glyphicon glyphicon-pencil"></span></a>
         </div>
         <div id="navbar" class="collapse navbar-collapse">
+            <div class="col-md-7 form-horizontal ">
+                <div class="col-lg-6">
+                    <form class="form-group " action="" method="get">
+                        <div class="has-error">
+                            <div class="col-xs-10 col-md-9 input_size">
+                                <input type="text" class="form-control" placeholder="기본검색" name="a" value="{{ q }}" />
+                            </div>
+                            <div class="col-md-2 button_size">
+                                <button type="submit" class="btn btn-primary"><span class="glyphicon glyphicon-search"></span></button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="col-lg-6">
+                    <form class="form-group" action="search/" method="get">
+                        <div class="has-error">
+                            <div class="col-xs-10 col-md-9 input_size">
+                                <input type="text" class="form-control " placeholder="Elasticsearch를 이용한 전문검색" name="keyword" value="{{ fq }}" />
+                            </div>
+                            <div class="col-md-2 button_size">
+                                <button type="submit" class="btn btn-primary"><span class="glyphicon glyphicon glyphicon-zoom-in"></span></button>
+                            </div>
+                        </div>
 
-            <div class="col-md-6 .col-md-offset-4">
-
-                <br>
-                <form class="form-horizontal" action="" method="get">
-                    <div class="col-xs-6">
-                        <input type="text" name="a" value="{{ q }}" />
-                        <button type="submit" class = "btn btn-primary"><span class="glyphicon glyphicon-search"></span></button>
-                    </div>
-                </form>
-
-                <form class="form-horizontal" action="search/" method="get">
-                    <div class="col-xs-6">
-                        <input type="text" name="keyword" value="{{ fq }}" />
-                        <input type="submit" value="FTS" class = "btn btn-primary"/>
-                    </div>
-                </form>
+                    </form>
+                </div>
             </div>
-
-            <ul class="nav navbar-nav navbar-right">
+            <ul class="nav nav-pills navbar-right">
                 {% if not user.is_authenticated %}
                     <li><a>도움말</a></li>
-                    <li><a href="{% url "signup" %}">회원가입</a></li>
+                    <li><a class="nav-link active" href="{% url "signup" %}" class="text-danger">회원가입</a></li>
                     {#                        next is current page and request. is context_processor#}
                     <li><a href="{% url "login" %}">로그인</a></li>
                 {% else %}
-                    <li><a>도움말</a></li>
+                    <li><a >도움말</a></li>
                     <li><a href="{% url "home:project_new" %}">새글쓰기</a></li>
                     <li><a href="{% url "profile" %}">프로필</a></li>
                     <li><a href="{% url "logout" %}?next={{ request.path }}">로그아웃</a></li>
@@ -67,6 +76,7 @@
             </ul>
         </div>
     </div>
+    {#    </div>#}
 </nav>
 <div class="container-fluid">
     <div class="row">
@@ -131,18 +141,19 @@
                     {% endfor %}
                 </div>
             {% endif %}
+
             {% block content %}
             {% endblock %}
         </div>
 
-        <div id="page-footer">
-            <div class="container navbar-fixed-bottom">
-                <p class="text-muted">
-                    &copy; ColdCrust
-                    피자한판드세요
-                </p>
-            </div>
-        </div>
+        {#        <div id="page-footer">#}
+        {#            <div class="container navbar-fixed-bottom">#}
+        {#                <p class="text-muted">#}
+        {#                    &copy; ColdCrust#}
+        {#                    피자한판드세요#}
+        {#                </p>#}
+        {#            </div>#}
+        {#        </div>#}
     </div>
 </div>
 

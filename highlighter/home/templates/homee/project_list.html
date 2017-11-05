@@ -32,18 +32,20 @@
                     <tr>
                         <div class="col-sm-6 col-md-2 sizess">
                             <div class="thumbnail">
-                                {% if project.photo %}
-                                    {% thumbnail "200x100" project.photo -- style="" onclick="" class=""%}
-                                {%  endif %}
-                                <div class="caption data">
-                                    <a href="{% url "home:project_detail" project.id %}">
-                                        {{ project.title }}
-                                    </a>
-                                </div>
-                                <div class="caption">
-                                    <a>{{ project.user }}</a><br>
-                                    {{ project.created_at }}
-                                </div>
+                                <a href="{% url "home:project_detail" project.id %}">
+                                    {% if project.photo %}
+                                        {% thumbnail "200x100" project.photo -- style="" onclick="" class=""%}
+                                    {%  endif %}
+                                </a>
+                                <h6>
+                                    <div class="mul_tum_data">
+                                        <a href="{% url "home:project_detail" project.id %}">
+                                            {{ project.title }}
+                                        </a>
+                                    </div>
+                                </h6>
+                                <h6><a>{{ project.user }}</a></h6>
+                                <h6>{{ project.created_at }}</h6>
 
                             </div>
                         </div>
@@ -73,5 +75,4 @@
             </table>
         </div>
     </div>
-
 {% endblock %}

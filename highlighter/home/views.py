@@ -1,3 +1,4 @@
+
 from django.contrib import messages
 from django.http import Http404
 from django.shortcuts import get_object_or_404,render,redirect
@@ -14,6 +15,7 @@ import json
 from django.http import HttpResponse
 from haystack.query import SearchQuerySet
 
+from random import sample, randint
 
 
 def project_new(request):
@@ -111,7 +113,7 @@ def project_like(request,id):
             u_dict[login_user] = set()
             u_dict[login_user].add(project.id)
 
-        print(u_dict)
+        # print(u_dict)
 
 
         profile.array_rated_project_indexs += (str(project.id)+',')
@@ -121,16 +123,18 @@ def project_like(request,id):
 
 def project_rcmd(request):
     login_user = request.user
+
     User = get_user_model()
     user = get_object_or_404(User,username=login_user)
     profile = get_object_or_404(Profile, user_id=user.id)
     login_user_rated_list_field = profile.array_rated_project_indexs
     users = User.objects.all()
-
+    all_profile = Profile.objects.all()
     login_user_rated_list = login_user_rated_list_field.split(',')[0:-1]
     #print(login_user_rated_list)
     users_interests = []
     login_user_id = None
+
 
     # for cnt in range(len(users)):
     #     profile = get_object_or_404(Profile, user_id=users[cnt].id)
@@ -150,16 +154,17 @@ def project_rcmd(request):
         users_profile_rated = profile.array_rated_project_indexs.split(',')[0:-1]
         users_interests.append(users_profile_rated)
 
+    id_list = [t.id for t in all_profile]
+
+    print(id_list)
+
+    for t in range(len(id_list)):
+        if id_list[t] == profile.id:
+            login_user_id = t
+            print(login_user_id)
 
 
 
-    for cnt in range(len(users_interests)):
-        if login_user_rated_list == users_interests[cnt]:
-            login_user_id = cnt
-            print(cnt)
-
-
-    #print(login_user_id)
 
 
     def dot(v, w):
@@ -178,24 +183,18 @@ def project_rcmd(request):
 
     #print("make_user_interest_vector:",make_user_interest_vector(users_interests[0]))
     # print("make_user_interest_vector:",make_user_interest_vector(users_interests[1]))
-
-
     user_interest_matrix = list(map(make_user_interest_vector, users_interests))
-    ##print(user_interest_matrix)
-
     # inverse
     interest_user_matrix = [[user_interest_vector[j]
                              for user_interest_vector in user_interest_matrix]
                             for j, _ in enumerate(unique_interests)]
-    #print(interest_user_matrix)
+
+    # print(interest_user_matrix)
 
     interest_similarities = [[cosine_similarity(user_vector_i, user_vector_j)
                               for user_vector_j in interest_user_matrix]
                              for user_vector_i in interest_user_matrix]
-
-    #print(interest_similarities)
-
-
+    # print(interest_similarities)
 
     def most_similar_interests_to(interest_id):
         similarities = interest_similarities[interest_id]
@@ -207,7 +206,6 @@ def project_rcmd(request):
                       reverse=True)
 
     #print('most_similar_interests_to:',most_similar_interests_to(login_user_id))
-
     def item_based_suggestions(user_id, include_current_interests=False):
         suggestions = defaultdict(float)
         user_interest_vector = user_interest_matrix[user_id]
@@ -216,7 +214,6 @@ def project_rcmd(request):
                 similar_interests = most_similar_interests_to(interest_id)
                 for interest, similarity in similar_interests:
                     suggestions[interest] += similarity
-
         suggestions = sorted(suggestions.items(),
                              key=lambda pair: pair[1],
                              reverse=True)
@@ -227,10 +224,9 @@ def project_rcmd(request):
             # return [(suggestion, weight)
             return [suggestion
                     for suggestion, weight in suggestions
-                    if suggestion not in users_interests[user_id]]
+                    if suggestion not in users_interests[user_id]][:10]
 
     print("item_based_suggestions",item_based_suggestions(login_user_id))
-
 
     int_list = []
     for t in map(int, item_based_suggestions(login_user_id)):
@@ -239,16 +235,102 @@ def project_rcmd(request):
 
     qs = Project.objects.filter(id__in=int_list)
 
+    # ---------------------------------------------------------------------------------------------------------------------------------#
 
+
+    def reverse(num_list):
+        reverse_list = []
+        for t in num_list:
+            if t == 1:
+                reverse_list.append(0)
+            else:
+                reverse_list.append(1)
+        return reverse_list
+
+    user_indifferent_matrix = []
+    for t in range(len(user_interest_matrix)):
+        if t == login_user_id:
+            user_indifferent_matrix.append(reverse(user_interest_matrix[t]))
+        else:
+            user_indifferent_matrix.append(user_interest_matrix[t])
+
+    # for t in user_indifferent_matrix:
+    #     print(t)
+    # inverse
+    indifferent_user_matrix = [[user_interest_vector[j]
+                                for user_interest_vector in user_indifferent_matrix]
+                               for j, _ in enumerate(unique_interests)]
+
+    # for t in indifferent_user_matrix:
+    #     print(t)
+
+    # print([[print("first:",user_vector_i, user_vector_j,math.sqrt(dot(user_vector_i, user_vector_i) * dot(user_vector_j, user_vector_j))) for user_vector_j in interest_user_matrix] for user_vector_i in interest_user_matrix])
+    #
+    # print("")
+    #
+    # print([[print("second:",user_vector_i, user_vector_j,math.sqrt(dot(user_vector_i, user_vector_i) * dot(user_vector_j, user_vector_j)))  for user_vector_j in indifferent_user_matrix] for user_vector_i in indifferent_user_matrix])
+
+
+    # similarity
+    indifferent_similarities = [[cosine_similarity(user_vector_i, user_vector_j)
+                                 for user_vector_j in indifferent_user_matrix]
+                                for user_vector_i in indifferent_user_matrix]
+
+    # print(indifferent_similarities[login_user_id])
+
+    def most_similar_indifferent_to(interest_id):
+        similarities = indifferent_similarities[interest_id]
+        pairs = [(unique_interests[other_interest_id], similarity)
+                 for other_interest_id, similarity in enumerate(similarities)
+                 if interest_id != other_interest_id and similarity > 0]
+        return sorted(pairs,
+                      key=lambda pair: pair[1],
+                      reverse=True)
+
+    # print('most_similar_indifferent_to:',most_similar_indifferent_to(0))
+
+
+    def item_based_suggestions_indifferent(user_id, include_current_interests=False):
+        suggestions = defaultdict(float)
+        user_interest_vector = user_indifferent_matrix[user_id]
+
+        for interest_id, is_interested in enumerate(user_interest_vector):
+            if is_interested == 1:
+                similar_interests = most_similar_indifferent_to(interest_id)
+                for interest, similarity in similar_interests:
+                    suggestions[interest] += similarity
+
+        suggestions = sorted(suggestions.items(),
+                             key=lambda pair: pair[1],
+                             reverse=True)
+
+        if include_current_interests:
+            return suggestions
+        else:
+            return [suggestion
+                    for suggestion, weight in suggestions
+                    if suggestion not in users_interests[user_id]][:15]
+
+    print("item_based_suggestion_indifferent:", item_based_suggestions_indifferent(login_user_id))
+
+    int_list2 = []
+    for t in map(int, item_based_suggestions_indifferent(login_user_id)):
+        int_list2.append(t)
+
+    random_list = random.sample(int_list2, random.randint(1, len(int_list2)))
+
+    qs_not = Project.objects.filter(id__in=random_list[:2])
     return render(request, 'homee/project_rcmd.html', {
-        'project_list': qs
+        'project_list': qs,
+        'indifferent': qs_not,
     })
 
 
 def project_search(request):
     keyword_query = request.GET.get('keyword', '')
     full_text =''
-    suggested =''
+    suggested=""#FIXME: delete init before assigned
+    qs = Project.objects.all()
 
     if keyword_query:
         global suggested
@@ -267,4 +349,5 @@ def project_search(request):
         'keyword_query' : keyword_query,
         'suggested' : suggested,
         'full_text' : full_text,
+        'project_list':qs,
     })
