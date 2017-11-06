@@ -2,37 +2,48 @@
 {%  load imagekit %}
 
 {% block content %}
-
-
     <div class="container">
         <div class="row">
-            <div class="col-sm-12">
+            <div class="col-sm-9">
                 <h1>{{ study.title }}</h1>
-                {% for post in study.post_set.all%}
-                    <h3>{{ post.user}}</h3>
-                {% endfor %}
-                <a href="{% url "study:study_participate" study.id %}" class="btn btn-primary">part-in!</a>
+
+                <div class="container">
+                    <div class="col-md-4"><h5>참여자: {% for t in study.user_set.all%}{{ t }} {% endfor %}</h5></div>
+                    <div class="col-md-4 col-md-offset-4"> <h5>스터디장: {{ study.user}}</h5></div>
+                    <div class="col-md-4">{{ study.created_at }}</div>
+                    <div class="col-md-4 col-md-offset-4"><a href="{% url "study:study_participate" study.id %}" class="btn btn-primary btn-lg">part-in!</a></div>
+                    <div class="col-md-4 col-md-offset-4"><a href="{% url "study:study_makeproject" study.id %}" class="btn btn-primary btn-lg">makePRJCT</a></div>
+                </div>
+                <hr>
                 {{ study.content|linebreaks }}
-
                 <hr/>
+                <h4>참여자</h4>
+                <div class="row">
+                    {% for i in study.user_set.all%}
+                        {% for j in project%}
+                        <div class="col-xs-6 col-lg-6">
+                        {%if i.user_id == j.user_id %}
+                                <h5>{{i}}</h5>
+                                <h5>{{j.title}}</h5>
+                        {% endif %}
+                        </div>
+                        {% endfor %}
+                    {% endfor %}
+                </div>
 
-                {% for t in study.user_set.all%}
-                    <h3>{{t}}</h3>
-                {% endfor %}
+            
                 <hr/>
                 <h2>공동목표todo-list</h2>
-
                 <ul>
                     {% for todo in study.grouptodo_set.all %}
                         <li>
-                            {{ todo.todo }}
+                            <h6>{{ todo.todo }}</h6>
                             <small> {{ todo.completed}}</small>
                             <small>at {{ todo.create_at}}</small>
                             <small>at {{ todo.updated_at }}</small>
                         </li>
                     {% endfor %}
                 </ul>
-
                 <hr/>
                 <h2>스터디모임 게시판</h2>
                 <ul>
@@ -49,9 +60,9 @@
                     {% endfor %}
                 </ul>
             </div>
-
         </div>
     </div>
+
 
 {%  endblock %}
 

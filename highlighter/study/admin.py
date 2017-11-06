@@ -3,7 +3,8 @@ from .models import Study,GroupTodo,Post
 
 @admin.register(Study)
 class CommentAdmin(admin.ModelAdmin):
-        pass
+        list_display = ['id', 'title']
+
 
 @admin.register(GroupTodo)
 class CommentAdmin(admin.ModelAdmin):
@@ -13,4 +14,3 @@ class CommentAdmin(admin.ModelAdmin):
 @admin.register(Post)
 class CommentAdmin(admin.ModelAdmin):
         pass
-

@@ -4,6 +4,7 @@ from django import forms
 from imagekit.models import ImageSpecField
 from imagekit.processors import Thumbnail
 from django.urls import reverse
+from study.models import Study
 
 
 def min_length_3_validator(value):
@@ -31,6 +32,7 @@ class Project(models.Model):
     #태그는솔찍히빈칸이여도됨
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
+    type = models.ForeignKey(Study,blank=True, null=True)
 
     def __str__(self):
         return self.title
