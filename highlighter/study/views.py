@@ -50,9 +50,12 @@ def study_makeproject(request,id):
     if request.method == 'POST':
         form = ProjectForm(request.POST)
         project = Project()
+
         login_user = request.user
         user = get_object_or_404(User, username=login_user)
 
+        study = get_object_or_404(Study, id=id)
+        
         if form.is_valid():
             project.user_id = user.id
             project.title = form.cleaned_data['title']
@@ -60,6 +63,7 @@ def study_makeproject(request,id):
             project.body = form.cleaned_data['body']
             project.status= "p"
             project.like= 0
+            project.type = study
             project.save()
             return redirect('/study/')
 
