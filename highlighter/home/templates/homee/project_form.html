@@ -5,15 +5,20 @@
     <div class="container">
         <div class="row">
             <div class="col-md-6 col-md-offset-3">
-                {#                enctype안하면사진안올라감#}
-                <form action="" method="post" enctype="multipart/form-data">
-                    {% csrf_token %}
-                    {% bootstrap_form form %}
-                    <input type="submit" class="btn btn-primary">
-                </form>
+
+                <table>
+                    <form action="" method="post">
+                        {%  csrf_token %}
+                        <table>
+                            {{ form.as_table }}
+                        </table>
+                        <input type="submit"/>
+                    </form>
+                </table>
             </div>
         </div>
     </div>
+
 
 
 
@@ -40,54 +45,54 @@
     {#    </div>#}
 
 
-{#    <hr>#}
-{#    <form action="" method="post" enctype="multipart/form-data">#}
-{#        {% csrf_token %}#}
-{#        <div class="form-group">#}
-{#            <h4>User</h4>#}
-{#            <input name="{{ user.username }}" class="form-control" value="{{ user.username }}" id="id_user">#}
-{#        </div>#}
-{#        <div class="">#}
-{#            <h4>제목</h4>#}
-{#            <input type="text" class="form-control" maxlength="50" placeholder="title" name={{ form.title.html_name }}>#}
-{#        </div>#}
-{#        <span class="help-block"></span>#}
-{#        <div class="">#}
-{#            <h4>내용</h4>#}
-{#            <textarea name={{ form.body.html_name }} class="form-control" title="" id="id_body" required placeholder="내용" rows="10" cols="40"></textarea>#}
-{#        </div>#}
-{#        <span class="help-block"></span>#}
-{#        <div class="">#}
-{#            <h4>Photo</h4>#}
-{#            <div class="row bootstrap3-multi-input"><div class="col-xs-12"><input type="file" name="photo" class=""id="id_photo" /></div>#}
-{#            </div>#}
-{#            <span class="help-block"></span>#}
-{#            <div class="">#}
-{#                <h4>Status</h4>#}
-{#                <select name={{ form.status.html_name }} required class="form-control" id="id_status">#}
-{#                    {% for status in form.status%}#}
-{#                        <option>{{ status }}</option>#}
-{#                    {% endfor %}#}
-{#                </select>#}
-{#            </div>#}
-{#            <span class="help-block"></span>#}
-{#            <div class="">#}
-{#                <h4>Like</h4>#}
-{#                <input type="number" name="like" class="form-control" value="0" id="id_like" />#}
-{#            </div>#}
-{#            <span class="help-block"></span>#}
-{#            <div class="">#}
-{#                <h4>Tag set</h4>#}
-{#                <select multiple class="form-control">#}
-{#                    {% for tag_set in form.tag_set%}#}
-{#                        <option>{{ tag_set }}</option>#}
-{#                    {% endfor %}#}
-{#                </select>#}
-{##}
-{#            </div>#}
-{#            <hr>#}
-{#            <button class="btn btn-lg btn-primary btn-block" type="submit">제출</button>#}
-{#    </form>#}
+    {#    <hr>#}
+    {#    <form action="" method="post" enctype="multipart/form-data">#}
+    {#        {% csrf_token %}#}
+    {#        <div class="form-group">#}
+    {#            <h4>User</h4>#}
+    {#            <input name="{{ user.username }}" class="form-control" value="{{ user.username }}" id="id_user">#}
+    {#        </div>#}
+    {#        <div class="">#}
+    {#            <h4>제목</h4>#}
+    {#            <input type="text" class="form-control" maxlength="50" placeholder="title" name={{ form.title.html_name }}>#}
+    {#        </div>#}
+    {#        <span class="help-block"></span>#}
+    {#        <div class="">#}
+    {#            <h4>내용</h4>#}
+    {#            <textarea name={{ form.body.html_name }} class="form-control" title="" id="id_body" required placeholder="내용" rows="10" cols="40"></textarea>#}
+    {#        </div>#}
+    {#        <span class="help-block"></span>#}
+    {#        <div class="">#}
+    {#            <h4>Photo</h4>#}
+    {#            <div class="row bootstrap3-multi-input"><div class="col-xs-12"><input type="file" name="photo" class=""id="id_photo" /></div>#}
+    {#            </div>#}
+    {#            <span class="help-block"></span>#}
+    {#            <div class="">#}
+    {#                <h4>Status</h4>#}
+    {#                <select name={{ form.status.html_name }} required class="form-control" id="id_status">#}
+    {#                    {% for status in form.status%}#}
+    {#                        <option>{{ status }}</option>#}
+    {#                    {% endfor %}#}
+    {#                </select>#}
+    {#            </div>#}
+    {#            <span class="help-block"></span>#}
+    {#            <div class="">#}
+    {#                <h4>Like</h4>#}
+    {#                <input type="number" name="like" class="form-control" value="0" id="id_like" />#}
+    {#            </div>#}
+    {#            <span class="help-block"></span>#}
+    {#            <div class="">#}
+    {#                <h4>Tag set</h4>#}
+    {#                <select multiple class="form-control">#}
+    {#                    {% for tag_set in form.tag_set%}#}
+    {#                        <option>{{ tag_set }}</option>#}
+    {#                    {% endfor %}#}
+    {#                </select>#}
+    {##}
+    {#            </div>#}
+    {#            <hr>#}
+    {#            <button class="btn btn-lg btn-primary btn-block" type="submit">제출</button>#}
+    {#    </form>#}
 
 
 {% endblock %}

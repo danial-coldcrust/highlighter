@@ -25,7 +25,7 @@ SECRET_KEY = '2#&pk9s9lw161r0f8=q!u2lfqn^zg)=*k8(kmi1310+%67^0dk'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS=['127.0.0.1']
+ALLOWED_HOSTS=['127.0.0.1','localhost']
 
 # Application definition
 INSTALLED_APPS = [
@@ -169,7 +169,6 @@ HAYSTACK_CONNECTIONS = {
 HAYSTACK_SIGNAL_PROCESSOR = 'haystack.signals.RealtimeSignalProcessor'
 
 ELASTICSEARCH_DEFAULT_ANALYZER = 'korean_index'
-
 
 ELASTICSEARCH_INDEX_SETTINGS = {
     'settings': {

@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="BookmarkManager">
-    <bookmark url="file://$PROJECT_DIR$/home/views.py" line="23" mnemonic="3" />
+    <bookmark url="file://$PROJECT_DIR$/study/templates/study/study_detail.html" line="22" />
+    <bookmark url="file://$PROJECT_DIR$" />
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e6183495-dc7f-470c-8d55-7b2e11e3454b" name="Default" comment="" />
@@ -13,54 +14,64 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="CoverageDataManager">
-    <SUITE FILE_PATH="coverage/highlighter$views.coverage" NAME="views Coverage Results" MODIFIED="1509869609986" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/home" />
+    <SUITE FILE_PATH="coverage/highlighter$views.coverage" NAME="views Coverage Results" MODIFIED="1510001718976" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/home" />
     <SUITE FILE_PATH="coverage/highlighter$settings.coverage" NAME="settings Coverage Results" MODIFIED="1508312389886" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/highlighter" />
   </component>
   <component name="DjangoConsoleOptions" custom-start-script="import sys; print('Python %s on %s' % (sys.version, sys.platform))&#10;import django; print('Django %s' % django.get_version())&#10;sys.path.extend([WORKING_DIR_AND_PYTHON_PATHS])&#10;if 'setup' in dir(django): django.setup()&#10;import django_manage_shell; django_manage_shell.run(PROJECT_ROOT)">
     <option name="myCustomStartScript" value="import sys; print('Python %s on %s' % (sys.version, sys.platform))&#10;import django; print('Django %s' % django.get_version())&#10;sys.path.extend([WORKING_DIR_AND_PYTHON_PATHS])&#10;if 'setup' in dir(django): django.setup()&#10;import django_manage_shell; django_manage_shell.run(PROJECT_ROOT)" />
+  </component>
+  <component name="DockManager">
+    <window id="1">
+      <content type="file-editors">
+        <state>
+          <leaf>
+            <file leaf-file-name="search_indexes.py" pinned="false" current-in-tab="true">
+              <entry file="file://$PROJECT_DIR$/home/search_indexes.py">
+                <provider selected="true" editor-type-id="text-editor">
+                  <state relative-caret-position="77">
+                    <caret line="29" column="0" lean-forward="false" selection-start-line="29" selection-start-column="0" selection-end-line="33" selection-end-column="0" />
+                    <folding />
+                  </state>
+                </provider>
+              </entry>
+            </file>
+          </leaf>
+        </state>
+      </content>
+    </window>
   </component>
   <component name="ExportToHTMLSettings">
     <option name="OUTPUT_DIRECTORY" value="$PROJECT_DIR$/exportToHTML" />
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="views.py" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/study/views.py">
+      <file leaf-file-name="urls.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/home/urls.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="472">
-              <caret line="57" column="8" lean-forward="false" selection-start-line="57" selection-start-column="8" selection-end-line="57" selection-end-column="8" />
+            <state relative-caret-position="180">
+              <caret line="11" column="1" lean-forward="true" selection-start-line="11" selection-start-column="1" selection-end-line="11" selection-end-column="1" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="views.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/home/views.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="109">
+              <caret line="351" column="34" lean-forward="true" selection-start-line="351" selection-start-column="34" selection-end-line="351" selection-end-column="34" />
               <folding>
-                <element signature="e#0#45#0" expanded="true" />
+                <element signature="e#1#36#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="study_list.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/study/templates/study/study_list.html">
+      <file leaf-file-name="project_rcmd.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/home/templates/homee/project_rcmd.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="144">
-              <caret line="8" column="23" lean-forward="true" selection-start-line="8" selection-start-column="23" selection-end-line="8" selection-end-column="23" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="study_detail.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/study/templates/study/study_detail.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="432">
-              <caret line="24" column="54" lean-forward="true" selection-start-line="24" selection-start-column="54" selection-end-line="24" selection-end-column="54" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="project_list.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/home/templates/homee/project_list.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="251">
-              <caret line="37" column="36" lean-forward="false" selection-start-line="37" selection-start-column="36" selection-end-line="37" selection-end-column="48" />
+            <state relative-caret-position="321">
+              <caret line="29" column="31" lean-forward="false" selection-start-line="29" selection-start-column="20" selection-end-line="29" selection-end-column="31" />
               <folding />
             </state>
           </provider>
@@ -81,18 +92,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>project</find>
-      <find>login_user</find>
-      <find>User</find>
-      <find>print</find>
-      <find>project_like</find>
-      <find>kakao</find>
-      <find>ff</find>
-      <find>index</find>
-      <find>Post</find>
-      <find>NEXT</find>
-      <find>project_like_</find>
-      <find>search</find>
       <find>next</find>
       <find>project_</find>
       <find>project_list</find>
@@ -107,11 +106,26 @@
       <find>debug</find>
       <find>staticfiles_d</find>
       <find>study</find>
-      <find>like</find>
       <find>m</find>
-      <find>su</find>
       <find>if</find>
+      <find>su</find>
+      <find>fil</find>
+      <find>auto_complete</find>
+      <find>lg</find>
+      <find>10px 15px</find>
+      <find>new</find>
+      <find>unique_interests</find>
+      <find>interest_user_matrix</find>
+      <find>user_in</find>
+      <find>test</find>
+      <find>int, user</find>
+      <find>AUTH_USER_MODEL</find>
+      <find>like</find>
+      <find>request</find>
     </findStrings>
+  </component>
+  <component name="HierarchyBrowserManager">
+    <option name="SCOPE" value="All" />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
@@ -129,44 +143,44 @@
         <option value="$PROJECT_DIR$/home/templates/homee/test.html" />
         <option value="$PROJECT_DIR$/accounts/templates/accounts/profile.html" />
         <option value="$PROJECT_DIR$/accounts/static/style.css" />
-        <option value="$PROJECT_DIR$/accounts/views.py" />
         <option value="$PROJECT_DIR$/accounts/urls.py" />
         <option value="$PROJECT_DIR$/accounts/models.py" />
-        <option value="$PROJECT_DIR$/accounts/templates/accounts/signup_form.html" />
-        <option value="$PROJECT_DIR$/home/templates/homee/project_form.html" />
         <option value="$PROJECT_DIR$/accounts/templates/accounts/layout.html" />
         <option value="$PROJECT_DIR$/highlighter/static/style.css" />
-        <option value="$PROJECT_DIR$/accounts/templates/accounts/login_form.html" />
         <option value="$PROJECT_DIR$/home/templates/homee/layout.html" />
         <option value="$PROJECT_DIR$/home/serializers.py" />
         <option value="$PROJECT_DIR$/home/api.py" />
-        <option value="$PROJECT_DIR$/home/search_indexes.py" />
         <option value="$PROJECT_DIR$/home/templates/homee/index.html" />
         <option value="$PROJECT_DIR$/search/urls.py" />
         <option value="$PROJECT_DIR$/search/views.py" />
-        <option value="$PROJECT_DIR$/home/urls.py" />
         <option value="$PROJECT_DIR$/highlighter/urls.py" />
         <option value="$PROJECT_DIR$/home/templates/homee/project_search_layout.html" />
-        <option value="$PROJECT_DIR$/home/templates/homee/project_search.html" />
-        <option value="$PROJECT_DIR$/home/static/home/style.css" />
-        <option value="$PROJECT_DIR$/home/templates/homee/project_list.html" />
         <option value="$PROJECT_DIR$/home/templates/homee/project_rcmd.html" />
         <option value="$PROJECT_DIR$/highlighter/templates/highlighter/404.html" />
-        <option value="$PROJECT_DIR$/highlighter/settings.py" />
-        <option value="$PROJECT_DIR$/study/templates/study/study_list.html" />
         <option value="$PROJECT_DIR$/study/models.py" />
         <option value="$PROJECT_DIR$/home/templates/homee/project_detail.html" />
-        <option value="$PROJECT_DIR$/highlighter/templates/highlighter/layout.html" />
         <option value="$PROJECT_DIR$/study/urls.py" />
-        <option value="$PROJECT_DIR$/home/views.py" />
-        <option value="$PROJECT_DIR$/home/forms.py" />
-        <option value="$PROJECT_DIR$/study/templates/study/study_makeproject.html" />
         <option value="$PROJECT_DIR$/study/forms.py" />
-        <option value="$PROJECT_DIR$/home/models.py" />
         <option value="$PROJECT_DIR$/home/admin.py" />
         <option value="$PROJECT_DIR$/study/admin.py" />
+        <option value="$PROJECT_DIR$/accounts/templates/accounts/login_form.html" />
+        <option value="$PROJECT_DIR$/study/templates/study/study_list.html" />
+        <option value="$PROJECT_DIR$/home/templates/homee/project_list.html" />
+        <option value="$PROJECT_DIR$/accounts/templates/accounts/signup_form.html" />
         <option value="$PROJECT_DIR$/study/templates/study/study_detail.html" />
+        <option value="$PROJECT_DIR$/home/static/home/style.css" />
+        <option value="$PROJECT_DIR$/highlighter/templates/highlighter/layout.html" />
+        <option value="$PROJECT_DIR$/study/templates/study/study_makeproject.html" />
+        <option value="$PROJECT_DIR$/home/templates/homee/project_form.html" />
+        <option value="$PROJECT_DIR$/home/forms.py" />
+        <option value="$PROJECT_DIR$/accounts/views.py" />
         <option value="$PROJECT_DIR$/study/views.py" />
+        <option value="$PROJECT_DIR$/highlighter/settings.py" />
+        <option value="$PROJECT_DIR$/home/models.py" />
+        <option value="$PROJECT_DIR$/home/templates/homee/project_search.html" />
+        <option value="$PROJECT_DIR$/home/urls.py" />
+        <option value="$PROJECT_DIR$/home/search_indexes.py" />
+        <option value="$PROJECT_DIR$/home/views.py" />
       </list>
     </option>
   </component>
@@ -177,8 +191,8 @@
     <sorting>DEFINITION_ORDER</sorting>
   </component>
   <component name="ProjectFrameBounds" extendedState="4">
-    <option name="x" value="960" />
-    <option name="y" value="27" />
+    <option name="x" value="688" />
+    <option name="y" value="513" />
     <option name="width" value="960" />
     <option name="height" value="1053" />
   </component>
@@ -198,6 +212,7 @@
     </navigator>
     <panes>
       <pane id="Scratches" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -208,12 +223,17 @@
             <path>
               <item name="highlighter" type="b2602c69:ProjectViewProjectNode" />
               <item name="highlighter" type="462c0819:PsiDirectoryNode" />
-              <item name="home" type="462c0819:PsiDirectoryNode" />
+              <item name="highlighter" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="highlighter" type="b2602c69:ProjectViewProjectNode" />
               <item name="highlighter" type="462c0819:PsiDirectoryNode" />
               <item name="home" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="highlighter" type="b2602c69:ProjectViewProjectNode" />
+              <item name="highlighter" type="462c0819:PsiDirectoryNode" />
+              <item name="home" type="462c0819:PsiDirectoryNode" />
               <item name="templates" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -221,40 +241,44 @@
               <item name="highlighter" type="462c0819:PsiDirectoryNode" />
               <item name="home" type="462c0819:PsiDirectoryNode" />
               <item name="templates" type="462c0819:PsiDirectoryNode" />
-              <item name="homee" type="462c0819:PsiDirectoryNode" />
+              <item name="search" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="highlighter" type="b2602c69:ProjectViewProjectNode" />
               <item name="highlighter" type="462c0819:PsiDirectoryNode" />
-              <item name="study" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="highlighter" type="b2602c69:ProjectViewProjectNode" />
-              <item name="highlighter" type="462c0819:PsiDirectoryNode" />
-              <item name="study" type="462c0819:PsiDirectoryNode" />
+              <item name="home" type="462c0819:PsiDirectoryNode" />
               <item name="templates" type="462c0819:PsiDirectoryNode" />
+              <item name="search" type="462c0819:PsiDirectoryNode" />
+              <item name="indexes" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="highlighter" type="b2602c69:ProjectViewProjectNode" />
               <item name="highlighter" type="462c0819:PsiDirectoryNode" />
-              <item name="study" type="462c0819:PsiDirectoryNode" />
+              <item name="home" type="462c0819:PsiDirectoryNode" />
               <item name="templates" type="462c0819:PsiDirectoryNode" />
-              <item name="study" type="462c0819:PsiDirectoryNode" />
+              <item name="search" type="462c0819:PsiDirectoryNode" />
+              <item name="indexes" type="462c0819:PsiDirectoryNode" />
+              <item name="home" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="highlighter" type="b2602c69:ProjectViewProjectNode" />
+              <item name="highlighter" type="462c0819:PsiDirectoryNode" />
+              <item name="media" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$USER_HOME$/PycharmProjects/untitled1" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../../.local/lib/python3.5/site-packages/haystack_elasticsearch5" />
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
-    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
+    <property name="settings.editor.selected.configurable" value="reference.settingsdialog.IDE.editor.colors" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="com.intellij.ide.scratch.LRUPopupBuilder$2/Languages" value="HTML" />
+    <property name="SearchEverywhereHistoryKey" value="&#9;FILE&#9;uml://Python/#/home/austinkoma/dev/hlprojects/highlighter/accounts/views.py" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
@@ -367,16 +391,15 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="960" y="27" width="960" height="1053" extended-state="4" />
-    <editor active="true" />
+    <frame x="688" y="513" width="960" height="1053" extended-state="4" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.303125" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.30833334" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32942432" sideWeight="0.50416666" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="1.0" sideWeight="0.49583334" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.66913944" sideWeight="0.49583334" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
@@ -399,178 +422,15 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="35" />
+      <option name="time" value="38" />
     </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/accounts/tests.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/accounts/views.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="558">
-          <caret line="41" column="46" lean-forward="false" selection-start-line="41" selection-start-column="46" selection-end-line="41" selection-end-column="46" />
-          <folding>
-            <element signature="e#0#32#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/accounts/urls.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="19" column="1" lean-forward="true" selection-start-line="19" selection-start-column="1" selection-end-line="19" selection-end-column="1" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/home/templates/homee/test.html" />
-    <entry file="file://$PROJECT_DIR$/accounts/templates/accounts/login_form.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="18">
-          <caret line="41" column="4" lean-forward="true" selection-start-line="41" selection-start-column="4" selection-end-line="104" selection-end-column="5" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/accounts/templates/accounts/signup_form.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="252">
-          <caret line="56" column="29" lean-forward="true" selection-start-line="56" selection-start-column="29" selection-end-line="56" selection-end-column="29" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/home/serializers.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="108">
-          <caret line="6" column="8" lean-forward="false" selection-start-line="6" selection-start-column="8" selection-end-line="6" selection-end-column="8" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/home/api.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="15" column="24" lean-forward="false" selection-start-line="15" selection-start-column="24" selection-end-line="15" selection-end-column="24" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/home/templates/search/indexes/home/project_text.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="36">
-          <caret line="2" column="17" lean-forward="true" selection-start-line="2" selection-start-column="17" selection-end-line="2" selection-end-column="17" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/home/templates/homee/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="5" column="0" lean-forward="false" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/home/templatetags/static_tags.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="20" column="39" lean-forward="false" selection-start-line="20" selection-start-column="39" selection-end-line="20" selection-end-column="39" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/home/templatetags/__init__.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/highlighter/wsgi.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/search/views.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="126">
-          <caret line="7" column="0" lean-forward="false" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/search/urls.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="72">
-          <caret line="5" column="56" lean-forward="false" selection-start-line="5" selection-start-column="42" selection-end-line="5" selection-end-column="56" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/home/templates/homee/project_search.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/accounts/admin.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="72">
-          <caret line="5" column="23" lean-forward="true" selection-start-line="5" selection-start-column="23" selection-end-line="5" selection-end-column="23" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/highlighter/__init__.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/home/tests.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="54">
           <caret line="3" column="0" lean-forward="true" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/home/apps.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="5" column="0" lean-forward="false" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/highlighter/static/style.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="144">
-          <caret line="8" column="12" lean-forward="false" selection-start-line="8" selection-start-column="1" selection-end-line="8" selection-end-column="12" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/accounts/templates/accounts/layout.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="18">
-          <caret line="1" column="0" lean-forward="false" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -578,15 +438,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="126">
           <caret line="7" column="0" lean-forward="false" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/highlighter/templates/highlighter/404.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="18">
-          <caret line="1" column="26" lean-forward="false" selection-start-line="1" selection-start-column="25" selection-end-line="1" selection-end-column="26" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -594,27 +445,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="378">
           <caret line="21" column="5" lean-forward="true" selection-start-line="21" selection-start-column="5" selection-end-line="21" selection-end-column="5" />
-          <folding>
-            <element signature="e#0#32#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/highlighter/settings.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="246">
-          <caret line="29" column="0" lean-forward="false" selection-start-line="29" selection-start-column="0" selection-end-line="29" selection-end-column="0" />
-          <folding>
-            <marker date="1509895055382" expanded="true" signature="1384:1452" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/home/static/home/style.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="234">
-          <caret line="13" column="34" lean-forward="true" selection-start-line="13" selection-start-column="34" selection-end-line="13" selection-end-column="34" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -622,15 +452,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/accounts/models.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="54">
-          <caret line="5" column="13" lean-forward="false" selection-start-line="5" selection-start-column="6" selection-end-line="5" selection-end-column="13" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -638,14 +459,631 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="126">
           <caret line="7" column="30" lean-forward="false" selection-start-line="7" selection-start-column="26" selection-end-line="7" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/home/__init__.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/accounts/templates/accounts/login_form.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="346">
+          <caret line="109" column="88" lean-forward="true" selection-start-line="109" selection-start-column="88" selection-end-line="109" selection-end-column="88" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/accounts/templates/accounts/signup_form.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2124">
+          <caret line="118" column="14" lean-forward="false" selection-start-line="118" selection-start-column="14" selection-end-line="118" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../../../.local/lib/python3.5/site-packages/haystack_elasticsearch5/backend.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1134">
+          <caret line="77" column="26" lean-forward="false" selection-start-line="77" selection-start-column="26" selection-end-line="77" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/accounts/templates/accounts/layout.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="18">
+          <caret line="1" column="0" lean-forward="true" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/highlighter/templates/highlighter/404.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="18">
+          <caret line="1" column="26" lean-forward="false" selection-start-line="1" selection-start-column="25" selection-end-line="1" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/highlighter/__init__.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/highlighter/static/style.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="144">
+          <caret line="8" column="12" lean-forward="false" selection-start-line="8" selection-start-column="1" selection-end-line="8" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/home/static/home/style.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="800">
+          <caret line="211" column="0" lean-forward="false" selection-start-line="211" selection-start-column="0" selection-end-line="211" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/study/templates/study/study_detail.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="54">
+          <caret line="15" column="20" lean-forward="true" selection-start-line="15" selection-start-column="20" selection-end-line="15" selection-end-column="20" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/study/templates/study/study_list.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="324">
+          <caret line="18" column="23" lean-forward="true" selection-start-line="18" selection-start-column="23" selection-end-line="18" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/study/templates/study/study_makeproject.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="18" selection-end-column="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/accounts/admin.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="72">
+          <caret line="5" column="23" lean-forward="true" selection-start-line="5" selection-start-column="23" selection-end-line="5" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/accounts/apps.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/accounts/forms.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/accounts/urls.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#32#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/home/apps.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="5" column="0" lean-forward="true" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/home/forms.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="252">
+          <caret line="15" column="0" lean-forward="false" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/study/admin.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="270">
+          <caret line="16" column="0" lean-forward="true" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/study/apps.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="5" column="0" lean-forward="true" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/study/forms.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="144">
+          <caret line="8" column="27" lean-forward="false" selection-start-line="8" selection-start-column="27" selection-end-line="8" selection-end-column="27" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/study/models.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="324">
+          <caret line="19" column="41" lean-forward="true" selection-start-line="19" selection-start-column="41" selection-end-line="19" selection-end-column="41" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/study/urls.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="126">
+          <caret line="8" column="1" lean-forward="true" selection-start-line="8" selection-start-column="1" selection-end-line="8" selection-end-column="1" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="uml://Python/#/home/austinkoma/dev/hlprojects/highlighter/study/views.py">
+      <provider selected="true" editor-type-id="UmlEditorProvider">
+        <state>
+          <ID>Python</ID>
+          <OriginalElement>#/home/austinkoma/dev/hlprojects/highlighter/study/views.py</OriginalElement>
+          <nodes />
+          <notes />
+          <edges />
+          <settings layout="Hierarchic Group" zoom="0.9" x="287.0" y="169.0" />
+          <SelectedNodes />
+          <Categories>
+            <Category>Fields</Category>
+            <Category>Inner Classes</Category>
+            <Category>Methods</Category>
+          </Categories>
+          <SCOPE>All</SCOPE>
+        </state>
+      </provider>
+    </entry>
+    <entry file="uml://JavaScript-modules-diagram//home/austinkoma/dev/hlprojects/highlighter">
+      <provider selected="true" editor-type-id="UmlEditorProvider">
+        <state>
+          <ID>JavaScript-modules-diagram</ID>
+          <OriginalElement>$PROJECT_DIR$</OriginalElement>
+          <nodes />
+          <notes />
+          <edges />
+          <settings layout="Hierarchic Group" zoom="1.0" x="835.0" y="441.0" />
+          <SelectedNodes />
+          <Categories>
+            <Category>All</Category>
+          </Categories>
+          <SCOPE>All</SCOPE>
+          <VISIBILITY>Details</VISIBILITY>
+        </state>
+      </provider>
+    </entry>
+    <entry file="uml://Python/#/home/austinkoma/dev/hlprojects/highlighter/accounts/views.py">
+      <provider selected="true" editor-type-id="UmlEditorProvider">
+        <state>
+          <ID>Python</ID>
+          <OriginalElement>#/home/austinkoma/dev/hlprojects/highlighter/accounts/views.py</OriginalElement>
+          <nodes>
+            <node x="70.5" y="742.0">accounts.views.view</node>
+            <node x="42.5" y="0.0">_collections_abc.Hashable</node>
+            <node x="0.0" y="163.0">object</node>
+          </nodes>
+          <notes />
+          <edges>
+            <edge source="accounts.views.view" target="object">
+              <point x="0.0" y="-56.0" />
+              <point x="0.0" y="264.5" />
+            </edge>
+            <edge source="object" target="_collections_abc.Hashable">
+              <point x="0.0" y="-264.5" />
+              <point x="0.0" y="56.5" />
+            </edge>
+          </edges>
+          <settings layout="Hierarchic Group" zoom="1.0" x="-510.0" y="262.0" />
+          <SelectedNodes>
+            <node>accounts.views.view</node>
+          </SelectedNodes>
+          <Categories>
+            <Category>Fields</Category>
+            <Category>Inner Classes</Category>
+            <Category>Methods</Category>
+          </Categories>
+          <SCOPE>All</SCOPE>
+        </state>
+      </provider>
+    </entry>
+    <entry file="uml://DjangoModelDependency/#highlighter">
+      <provider selected="true" editor-type-id="UmlEditorProvider">
+        <state>
+          <ID>DjangoModelDependency</ID>
+          <OriginalElement>#highlighter</OriginalElement>
+          <nodes>
+            <node x="104.625" y="532.0">home.models.Project</node>
+            <node x="243.0" y="902.0">home.models.Comment</node>
+            <node x="859.625" y="0.0">home.models.Post</node>
+            <node x="64.125" y="331.0">home.models.Tag</node>
+            <node x="591.625" y="584.0">study.models.Post</node>
+            <node x="348.625" y="610.0">study.models.GroupTodo</node>
+            <node x="0.0" y="902.0">home.models.Todo</node>
+            <node x="331.0" y="0.0">accounts.models.Profile</node>
+            <node x="360.5" y="266.0">study.models.Study</node>
+          </nodes>
+          <notes />
+          <edges>
+            <edge source="home.models.Project" target="home.models.Tag">
+              <point x="-56.0" y="-160.0" />
+              <point x="0.0" y="43.0" />
+            </edge>
+            <edge source="study.models.Study" target="accounts.models.Profile">
+              <point x="0.0" y="-108.0" />
+              <point x="0.0" y="108.0" />
+            </edge>
+            <edge source="study.models.Post" target="study.models.Study">
+              <point x="0.0" y="-108.0" />
+              <point x="703.125" y="507.0" />
+              <point x="553.8333333333333" y="507.0" />
+              <point x="77.33333333333326" y="108.0" />
+            </edge>
+            <edge source="home.models.Todo" target="home.models.Project">
+              <point x="0.0" y="-82.0" />
+              <point x="111.5" y="877.0" />
+              <point x="160.625" y="877.0" />
+              <point x="-56.0" y="160.0" />
+            </edge>
+            <edge source="home.models.Comment" target="home.models.Project">
+              <point x="0.0" y="-82.0" />
+              <point x="354.5" y="877.0" />
+              <point x="272.625" y="877.0" />
+              <point x="56.0" y="160.0" />
+            </edge>
+            <edge source="study.models.GroupTodo" target="study.models.Study">
+              <point x="0.0" y="-82.0" />
+              <point x="460.125" y="507.0" />
+              <point x="476.5" y="507.0" />
+              <point x="0.0" y="108.0" />
+            </edge>
+            <edge source="home.models.Project" target="study.models.Study">
+              <point x="56.0" y="-160.0" />
+              <point x="272.625" y="507.0" />
+              <point x="399.1666666666667" y="507.0" />
+              <point x="-77.33333333333331" y="108.0" />
+            </edge>
+          </edges>
+          <settings layout="Hierarchic Group" zoom="0.7151571164510167" x="-322.0" y="259.0" />
+          <SelectedNodes>
+            <node>study.models.Study</node>
+          </SelectedNodes>
+          <Categories>
+            <Category>Fields</Category>
+          </Categories>
+          <SCOPE>All</SCOPE>
+        </state>
+      </provider>
+    </entry>
+    <entry file="uml://Python/#/home/austinkoma/dev/hlprojects/highlighter/accounts">
+      <provider selected="true" editor-type-id="UmlEditorProvider">
+        <state>
+          <ID>Python</ID>
+          <OriginalElement>#/home/austinkoma/dev/hlprojects/highlighter/accounts</OriginalElement>
+          <nodes>
+            <node x="1418.0" y="1506.0">accounts.forms.SignupForm</node>
+            <node x="1157.75" y="0.0">django.forms.forms.BaseForm</node>
+            <node x="935.0" y="1619.0">accounts.views.view</node>
+            <node x="797.0" y="838.0">django.forms.models.BaseModelForm</node>
+            <node x="350.0" y="2977.0">accounts.models.Profile</node>
+            <node x="2271.0" y="1383.0">accounts.forms.LoginForm</node>
+            <node x="2275.0" y="942.0">django.forms.forms.Form</node>
+            <node x="1365.0" y="1344.0">django.contrib.auth.forms.UserCreationForm</node>
+            <node x="2195.0" y="1130.0">django.contrib.auth.forms.AuthenticationForm</node>
+            <node x="1400.5" y="1195.0">django.forms.models.ModelForm</node>
+            <node x="0.0" y="0.0">django.contrib.admin.options.ModelAdmin</node>
+            <node x="0.0" y="1619.0">django.db.models.base.Model</node>
+            <node x="266.0" y="1540.0">accounts.admin.ProfileAdmin</node>
+          </nodes>
+          <notes />
+          <edges>
+            <edge source="django.contrib.auth.forms.AuthenticationForm" target="django.forms.forms.Form">
+              <point x="0.0" y="-82.0" />
+              <point x="0.0" y="17.0" />
+            </edge>
+            <edge source="django.contrib.auth.forms.UserCreationForm" target="django.forms.models.ModelForm">
+              <point x="0.0" y="-56.0" />
+              <point x="0.0" y="17.0" />
+            </edge>
+            <edge source="django.forms.forms.Form" target="django.forms.forms.BaseForm">
+              <point x="0.0" y="-17.0" />
+              <point x="2374.5" y="813.0" />
+              <point x="2346.5" y="813.0" />
+              <point x="396.25" y="394.0" />
+            </edge>
+            <edge source="django.forms.models.BaseModelForm" target="django.forms.forms.BaseForm">
+              <point x="0.0" y="-121.0" />
+              <point x="1526.0" y="813.0" />
+              <point x="1554.0" y="813.0" />
+              <point x="-396.25" y="394.0" />
+            </edge>
+            <edge source="accounts.forms.LoginForm" target="django.contrib.auth.forms.AuthenticationForm">
+              <point x="0.0" y="-17.0" />
+              <point x="0.0" y="82.0" />
+            </edge>
+            <edge source="accounts.admin.ProfileAdmin" target="django.contrib.admin.options.ModelAdmin">
+              <point x="0.0" y="-17.0" />
+              <point x="0.0" y="745.0" />
+            </edge>
+            <edge source="accounts.forms.SignupForm" target="django.contrib.auth.forms.UserCreationForm">
+              <point x="0.0" y="-30.0" />
+              <point x="0.0" y="56.0" />
+            </edge>
+            <edge source="django.forms.models.ModelForm" target="django.forms.models.BaseModelForm">
+              <point x="0.0" y="-17.0" />
+              <point x="0.0" y="121.0" />
+            </edge>
+            <edge source="accounts.models.Profile" target="django.db.models.base.Model">
+              <point x="0.0" y="-30.0" />
+              <point x="0.0" y="654.0" />
+            </edge>
+          </edges>
+          <settings layout="Hierarchic Group" zoom="1.3" x="650.0" y="1401.0" />
+          <SelectedNodes>
+            <node>accounts.admin.ProfileAdmin</node>
+          </SelectedNodes>
+          <Categories />
+          <SCOPE>All</SCOPE>
+        </state>
+      </provider>
+    </entry>
+    <entry file="uml://Python/#/home/austinkoma/dev/hlprojects/highlighter/home">
+      <provider selected="true" editor-type-id="UmlEditorProvider">
+        <state>
+          <ID>Python</ID>
+          <OriginalElement>#/home/austinkoma/dev/hlprojects/highlighter/home</OriginalElement>
+          <nodes>
+            <node x="1029.5" y="1358.0">home.models.Tag</node>
+            <node x="554.5" y="1566.0">home.admin.CommentAdmin</node>
+            <node x="217.5" y="1540.0">home.admin.ProjectAdmin</node>
+            <node x="1391.5" y="1371.0">home.models.Post</node>
+            <node x="0.0" y="1671.0">haystack.indexes.SearchIndex</node>
+            <node x="1199.5" y="1358.0">home.models.Project</node>
+            <node x="528.0" y="1918.0">haystack.constants.Indexable</node>
+            <node x="840.5" y="0.0">django.db.models.base.Model</node>
+            <node x="0.0" y="0.0">django.contrib.admin.options.ModelAdmin</node>
+            <node x="1061.5" y="1755.0">home.forms.ProjectForm</node>
+            <node x="17.5" y="1566.0">home.admin.TagAdmin</node>
+            <node x="1060.0" y="1671.0">django.forms.forms.Form</node>
+            <node x="1567.5" y="1358.0">home.models.Todo</node>
+            <node x="317.5" y="2249.0">home.search_indexes.ProjectIndex</node>
+            <node x="819.5" y="1358.0">home.models.Comment</node>
+            <node x="795.0" y="1671.0">home.views.view</node>
+          </nodes>
+          <notes />
+          <edges>
+            <edge source="home.admin.TagAdmin" target="django.contrib.admin.options.ModelAdmin">
+              <point x="0.0" y="-17.0" />
+              <point x="107.5" y="1515.0" />
+              <point x="125.33333333333334" y="1515.0" />
+              <point x="-250.66666666666666" y="745.0" />
+            </edge>
+            <edge source="home.models.Project" target="django.db.models.base.Model">
+              <point x="0.0" y="-30.0" />
+              <point x="0.0" y="654.0" />
+            </edge>
+            <edge source="home.models.Post" target="django.db.models.base.Model">
+              <point x="0.0" y="-17.0" />
+              <point x="1469.5" y="1333.0" />
+              <point x="1463.5" y="1333.0" />
+              <point x="178.0" y="654.0" />
+            </edge>
+            <edge source="home.models.Comment" target="django.db.models.base.Model">
+              <point x="0.0" y="-30.0" />
+              <point x="914.5" y="1333.0" />
+              <point x="929.5" y="1333.0" />
+              <point x="-356.0" y="654.0" />
+            </edge>
+            <edge source="home.search_indexes.ProjectIndex" target="haystack.indexes.SearchIndex">
+              <point x="-64.5" y="-43.0" />
+              <point x="382.0" y="2224.0" />
+              <point x="254.0" y="2224.0" />
+              <point x="0.0" y="264.0" />
+            </edge>
+            <edge source="home.models.Tag" target="django.db.models.base.Model">
+              <point x="0.0" y="-30.0" />
+              <point x="1104.5" y="1333.0" />
+              <point x="1107.5" y="1333.0" />
+              <point x="-178.0" y="654.0" />
+            </edge>
+            <edge source="home.search_indexes.ProjectIndex" target="haystack.constants.Indexable">
+              <point x="64.5" y="-43.0" />
+              <point x="511.0" y="2224.0" />
+              <point x="639.0" y="2224.0" />
+              <point x="0.0" y="17.0" />
+            </edge>
+            <edge source="home.forms.ProjectForm" target="django.forms.forms.Form">
+              <point x="0.0" y="-17.0" />
+              <point x="0.0" y="17.0" />
+            </edge>
+            <edge source="home.admin.CommentAdmin" target="django.contrib.admin.options.ModelAdmin">
+              <point x="0.0" y="-17.0" />
+              <point x="664.5" y="1515.0" />
+              <point x="626.6666666666666" y="1515.0" />
+              <point x="250.66666666666663" y="745.0" />
+            </edge>
+            <edge source="home.admin.ProjectAdmin" target="django.contrib.admin.options.ModelAdmin">
+              <point x="0.0" y="-43.0" />
+              <point x="0.0" y="745.0" />
+            </edge>
+            <edge source="home.models.Todo" target="django.db.models.base.Model">
+              <point x="0.0" y="-30.0" />
+              <point x="1648.0" y="1333.0" />
+              <point x="1641.5" y="1333.0" />
+              <point x="356.0" y="654.0" />
+            </edge>
+          </edges>
+          <settings layout="Hierarchic Group" zoom="1.9131332082551602" x="456.0" y="1620.0" />
+          <SelectedNodes />
+          <Categories>
+            <Category>Methods</Category>
+          </Categories>
+          <SCOPE>All</SCOPE>
+        </state>
+      </provider>
+    </entry>
+    <entry file="uml://Python/#/home/austinkoma/dev/hlprojects/highlighter/study">
+      <provider selected="true" editor-type-id="UmlEditorProvider">
+        <state>
+          <ID>Python</ID>
+          <OriginalElement>#/home/austinkoma/dev/hlprojects/highlighter/study</OriginalElement>
+          <nodes>
+            <node x="267.0" y="1540.0">study.admin.CommentAdmin</node>
+            <node x="1161.0" y="1358.0">study.models.Study</node>
+            <node x="0.0" y="1619.0">study.views.view</node>
+            <node x="797.0" y="0.0">django.db.models.base.Model</node>
+            <node x="1343.0" y="1358.0">study.models.Post</node>
+            <node x="941.0" y="1358.0">study.models.GroupTodo</node>
+            <node x="0.0" y="0.0">django.contrib.admin.options.ModelAdmin</node>
+            <node x="301.5" y="1703.0">study.forms.ProjectForm</node>
+            <node x="299.0" y="1619.0">django.forms.forms.Form</node>
+          </nodes>
+          <notes />
+          <edges>
+            <edge source="study.models.Post" target="django.db.models.base.Model">
+              <point x="0.0" y="-30.0" />
+              <point x="1420.0" y="1333.0" />
+              <point x="1538.6666666666667" y="1333.0" />
+              <point x="296.66666666666674" y="654.0" />
+            </edge>
+            <edge source="study.forms.ProjectForm" target="django.forms.forms.Form">
+              <point x="0.0" y="-17.0" />
+              <point x="0.0" y="17.0" />
+            </edge>
+            <edge source="study.models.GroupTodo" target="django.db.models.base.Model">
+              <point x="0.0" y="-30.0" />
+              <point x="1041.0" y="1333.0" />
+              <point x="945.3333333333333" y="1333.0" />
+              <point x="-296.6666666666667" y="654.0" />
+            </edge>
+            <edge source="study.models.Study" target="django.db.models.base.Model">
+              <point x="0.0" y="-30.0" />
+              <point x="5.6843418860808015E-14" y="654.0" />
+            </edge>
+            <edge source="study.admin.CommentAdmin" target="django.contrib.admin.options.ModelAdmin">
+              <point x="0.0" y="-17.0" />
+              <point x="0.0" y="745.0" />
+            </edge>
+          </edges>
+          <settings layout="Hierarchic Group" zoom="1.4000000000000001" x="155.0" y="1544.0" />
+          <SelectedNodes />
+          <Categories>
+            <Category>Methods</Category>
+          </Categories>
+          <SCOPE>All</SCOPE>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/home/admin.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="378">
+          <caret line="22" column="37" lean-forward="false" selection-start-line="22" selection-start-column="37" selection-end-line="22" selection-end-column="37" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/home/templates/homee/project_form.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-453">
-          <caret line="41" column="0" lean-forward="false" selection-start-line="41" selection-start-column="0" selection-end-line="41" selection-end-column="0" />
+        <state relative-caret-position="342">
+          <caret line="22" column="0" lean-forward="false" selection-start-line="22" selection-start-column="0" selection-end-line="22" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/home/templates/homee/project_list.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="54">
+          <caret line="18" column="40" lean-forward="false" selection-start-line="18" selection-start-column="40" selection-end-line="18" selection-end-column="40" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/highlighter/templates/highlighter/layout.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="390">
+          <caret line="38" column="20" lean-forward="false" selection-start-line="38" selection-start-column="20" selection-end-line="38" selection-end-column="20" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/home/templates/homee/project_search.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="285">
+          <caret line="157" column="46" lean-forward="false" selection-start-line="157" selection-start-column="46" selection-end-line="157" selection-end-column="46" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/home/models.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="126">
+          <caret line="7" column="0" lean-forward="false" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#28#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/home/templates/homee/project_detail.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="213">
+          <caret line="33" column="67" lean-forward="false" selection-start-line="33" selection-start-column="67" selection-end-line="33" selection-end-column="67" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/study/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="576">
+          <caret line="38" column="28" lean-forward="false" selection-start-line="38" selection-start-column="28" selection-end-line="38" selection-end-column="28" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/accounts/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="432">
+          <caret line="32" column="12" lean-forward="false" selection-start-line="32" selection-start-column="12" selection-end-line="32" selection-end-column="12" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/accounts/models.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="144">
+          <caret line="10" column="30" lean-forward="false" selection-start-line="10" selection-start-column="4" selection-end-line="10" selection-end-column="30" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$APPLICATION_CONFIG_DIR$/scratches/scratch.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="20" lean-forward="true" selection-start-line="0" selection-start-column="20" selection-end-line="0" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/highlighter/settings.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="159">
+          <caret line="152" column="44" lean-forward="false" selection-start-line="152" selection-start-column="44" selection-end-line="152" selection-end-column="44" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/home/templates/homee/project_rcmd.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="321">
+          <caret line="29" column="31" lean-forward="false" selection-start-line="29" selection-start-column="20" selection-end-line="29" selection-end-column="31" />
           <folding />
         </state>
       </provider>
@@ -658,175 +1096,20 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/home/templates/homee/project_detail.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="342">
-          <caret line="20" column="26" lean-forward="true" selection-start-line="20" selection-start-column="26" selection-end-line="20" selection-end-column="26" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/home/templates/homee/project_search.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="873">
-          <caret line="140" column="60" lean-forward="true" selection-start-line="140" selection-start-column="60" selection-end-line="140" selection-end-column="60" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/home/templates/homee/project_rcmd.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="625">
-          <caret line="45" column="27" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="54" selection-end-column="14" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/home/__init__.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/highlighter/templates/highlighter/layout.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="414">
-          <caret line="65" column="41" lean-forward="false" selection-start-line="65" selection-start-column="41" selection-end-line="65" selection-end-column="41" />
-          <folding>
-            <marker date="1509965126099" expanded="false" signature="6929:6935" ph="©" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/study/urls.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="126">
-          <caret line="7" column="61" lean-forward="false" selection-start-line="7" selection-start-column="44" selection-end-line="7" selection-end-column="61" />
-          <folding>
-            <element signature="e#0#32#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/home/forms.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="54">
-          <caret line="4" column="35" lean-forward="true" selection-start-line="4" selection-start-column="35" selection-end-line="4" selection-end-column="35" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/study/templates/study/study_makeproject.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="324">
-          <caret line="18" column="7" lean-forward="true" selection-start-line="18" selection-start-column="7" selection-end-line="18" selection-end-column="7" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/home/search_indexes.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="144">
-          <caret line="10" column="9" lean-forward="false" selection-start-line="10" selection-start-column="9" selection-end-line="10" selection-end-column="9" />
+        <state relative-caret-position="77">
+          <caret line="29" column="0" lean-forward="false" selection-start-line="29" selection-start-column="0" selection-end-line="33" selection-end-column="0" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/study/forms.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="54">
-          <caret line="3" column="0" lean-forward="true" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/study/models.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="198">
-          <caret line="11" column="12" lean-forward="false" selection-start-line="11" selection-start-column="4" selection-end-line="11" selection-end-column="12" />
-          <folding>
-            <element signature="e#0#28#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/home/admin.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="144">
-          <caret line="9" column="4" lean-forward="false" selection-start-line="9" selection-start-column="4" selection-end-line="9" selection-end-column="4" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/study/admin.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="288">
-          <caret line="16" column="0" lean-forward="true" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
-          <folding>
-            <element signature="e#0#32#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/home/views.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="72">
-          <caret line="78" column="0" lean-forward="true" selection-start-line="78" selection-start-column="0" selection-end-line="78" selection-end-column="0" />
+        <state relative-caret-position="109">
+          <caret line="351" column="34" lean-forward="true" selection-start-line="351" selection-start-column="34" selection-end-line="351" selection-end-column="34" />
           <folding>
             <element signature="e#1#36#0" expanded="true" />
-            <element signature="e#1972#2227#0" expanded="false" />
-            <element signature="e#3077#11198#0" expanded="false" />
-            <element signature="e#4556#4603#0" expanded="false" />
-            <element signature="e#4646#4697#0" expanded="false" />
-            <element signature="e#4734#4885#0" expanded="false" />
-            <element signature="e#4997#5077#0" expanded="false" />
-            <element signature="e#5377#5480#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/home/models.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="612">
-          <caret line="34" column="8" lean-forward="false" selection-start-line="34" selection-start-column="4" selection-end-line="34" selection-end-column="8" />
-          <folding>
-            <element signature="e#0#28#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/study/templates/study/study_list.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="144">
-          <caret line="8" column="23" lean-forward="true" selection-start-line="8" selection-start-column="23" selection-end-line="8" selection-end-column="23" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/home/templates/homee/project_list.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="251">
-          <caret line="37" column="36" lean-forward="false" selection-start-line="37" selection-start-column="36" selection-end-line="37" selection-end-column="48" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/study/templates/study/study_detail.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="432">
-          <caret line="24" column="54" lean-forward="true" selection-start-line="24" selection-start-column="54" selection-end-line="24" selection-end-column="54" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/study/views.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="472">
-          <caret line="57" column="8" lean-forward="false" selection-start-line="57" selection-start-column="8" selection-end-line="57" selection-end-column="8" />
-          <folding>
-            <element signature="e#0#45#0" expanded="true" />
           </folding>
         </state>
       </provider>

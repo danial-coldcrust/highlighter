@@ -11,26 +11,27 @@
                     <div class="col-md-4"><h5>참여자: {% for t in study.user_set.all%}{{ t }} {% endfor %}</h5></div>
                     <div class="col-md-4 col-md-offset-4"> <h5>스터디장: {{ study.user}}</h5></div>
                     <div class="col-md-4">{{ study.created_at }}</div>
-                    <div class="col-md-4 col-md-offset-4"><a href="{% url "study:study_participate" study.id %}" class="btn btn-primary btn-lg">part-in!</a></div>
-                    <div class="col-md-4 col-md-offset-4"><a href="{% url "study:study_makeproject" study.id %}" class="btn btn-primary btn-lg">makePRJCT</a></div>
+                    <div class="col-md-4 col-md-offset-4"><a href="{% url "study:study_participate" study.id %}" class="btn btn-primary btn-lg">Part-In!</a></div>
                 </div>
                 <hr>
                 {{ study.content|linebreaks }}
                 <hr/>
                 <h4>참여자</h4>
-                <div class="row">
+
+
+                <div class="row sizess">
                     {% for i in study.user_set.all%}
-                        {% for j in project%}
-                        <div class="col-xs-6 col-lg-6">
-                        {%if i.user_id == j.user_id %}
-                                <h5>{{i}}</h5>
-                                <h5>{{j.title}}</h5>
-                        {% endif %}
+                        <div class="col-xs-5 col-lg-5 alert alert-dismissible alert-danger study_style">
+                            {% for j in project%}
+                                {%if i.user_id == j.user_id %}
+                                    <h5> <a href="{% url "home:project_detail" j.id %}">{{j.title}}</a></h5>
+                                {% endif %}
+                            {% endfor %}
+                            <h4>{{i}}</h4>
                         </div>
-                        {% endfor %}
                     {% endfor %}
                 </div>
-
+                <a href="{% url "study:study_makeproject" study.id %}" class="btn btn-primary btn-sm">makePROJCET</a>
 
                 <hr/>
                 <h2>공동목표todo-list</h2>

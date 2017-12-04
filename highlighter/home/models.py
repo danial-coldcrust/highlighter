@@ -19,15 +19,16 @@ class Project(models.Model):
         ('p', 'Published'),
     )
 
+    #user = models.ForeignKey(settings.AUTH_USER_MODEL)
     user = models.ForeignKey(settings.AUTH_USER_MODEL)
     title = models.CharField(max_length=100, verbose_name='제목',validators=[min_length_3_validator])
 
-    body = models.TextField(verbose_name='내용')
+    body = models.TextField(verbose_name='내용',default=".")
     photo = models.ImageField(blank=True, upload_to='home/project/%Y/%m/%d')
     # photo_thumbnail = ImageSpecField(source='photo', processors=[Thumbnail(300, 300)], format='JPEG',
     #                                         options={'quality', 60})
-    status = models.CharField(max_length=1, choices=STATUS_CHOICES)
-    like = models.IntegerField(blank=True)
+    status = models.CharField(max_length=1, choices=STATUS_CHOICES, default="Draft")
+    like = models.IntegerField(blank=True, default=0)
     tag_set = models.ManyToManyField('Tag',blank=True)
     #태그는솔찍히빈칸이여도됨
     created_at = models.DateTimeField(auto_now_add=True)
@@ -36,7 +37,6 @@ class Project(models.Model):
 
     def __str__(self):
         return self.title
-
 
 
 

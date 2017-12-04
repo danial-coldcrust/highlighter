@@ -55,7 +55,7 @@ def study_makeproject(request,id):
         user = get_object_or_404(User, username=login_user)
 
         study = get_object_or_404(Study, id=id)
-        
+
         if form.is_valid():
             project.user_id = user.id
             project.title = form.cleaned_data['title']

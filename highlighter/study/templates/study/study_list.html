@@ -2,6 +2,16 @@
 {% load imagekit %}
 {% load bootstrap3 %}
 {% block content %}
+    <div class="jumbotron">
+        <h1>HighLighter Project <sup>by coldcrust</sup></h1>
+        <p>여러분의 자기관리 페이스메이커가 되어드리겠습니다.</p>
+        <h2>
+            <a class="btn btn-lg btn-primary" href="{% url "home:project_rcmd" %}">
+                내 스터디 추천받기^^
+            </a>
+        </h2>
+    </div>
+
     <div class="row">
         <div class="col-sm-12">
             <h3>Study목록</h3>

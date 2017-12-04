@@ -131,7 +131,9 @@ body {
     background-color: #428bca;
 }
 
-
+.nav > li > a{
+    padding: 10px 9px;
+}
 /*
  * Main content
  */
@@ -191,4 +193,19 @@ body {
 .mystyle{
     margin-bottom: 10px;
     margin-top: 10px;
+}
+.study_style{
+    margin-right: 21px;
+}
+.cus_font{
+    font-size: 13px;
+}
+/*.cus_nav_right{*/
+/*width: 32%;*/
+/*}*/
+.cus_head{
+    padding: 10px 12px;
+}
+.magin-top{
+    margin-top: 1px;
 }
